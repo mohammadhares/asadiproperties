@@ -22,4 +22,12 @@ Route::GET('/offplane', [WebsiteController::class, 'offplane']);
 Route::GET('/contact', [WebsiteController::class, 'contact']);
 Route::GET('/blog', [WebsiteController::class, 'blog']);
 Route::GET('/about', [WebsiteController::class, 'about']);
+Route::GET('/services', [WebsiteController::class, 'services']);
 Route::POST('/subscribe', [SubscribeController::class, 'subscribe'])->name('subscribe');
+Route::GET('/termsof', [WebsiteController::class, 'termsof']);
+Route::GET('/privaecy', [WebsiteController::class, 'privaecy']);
+Route::GET('/pricing', [WebsiteController::class, 'pricing']);
+Route::GET('/careers', [WebsiteController::class, 'careers']);
+Route::GET('/FAQs', [WebsiteController::class, 'FAQs']);
+Route::GET('/sitemap', [WebsiteController::class, 'sitemap']);
+

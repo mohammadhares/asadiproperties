@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
 Project/Template Name:  Homez - Real Estate HTML Template
-Template Url:  
+Template Url:
 Author: CreativeLayers
 Author Url: https://themeforest.net/user/creativelayers/portfolio
 Version: 1.0.0
@@ -7022,7 +7022,7 @@ header.nav-innerpage-style .ace-responsive-menu .sub-menu li {
   -ms-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  
+
 
 }
 header.nav-innerpage-style .ace-responsive-menu .sub-menu li:hover {
@@ -7040,6 +7040,7 @@ header.nav-innerpage-style .ace-responsive-menu .megamenu_style .sub-menu li {
 }
 header.nav-innerpage-style .ace-responsive-menu .megamenu_style .sub-menu li:hover {
   background-color: transparent;
+
 }
 header.nav-innerpage-style .ace-responsive-menu .megamenu_style .sub-menu a:hover {
   text-decoration: underline;
@@ -7269,6 +7270,13 @@ header.nav-homepage-style.stricky.stricky-fixed .header-logo.logo1 {
 }
 header.nav-homepage-style.stricky.stricky-fixed .header-logo.logo2 {
   display: block;
+}
+.header-logo img{
+    width: 80%;
+    height: 40px;
+}
+.privecy{
+    padding: 50px;
 }
 header.nav-homepage-style.stricky.stricky-fixed .menu-btn,
 header.nav-homepage-style.stricky.stricky-fixed .btn-transparent2 {

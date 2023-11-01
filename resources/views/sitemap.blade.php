@@ -1,7 +1,8 @@
 @extends('layout.app')
  @section('content')
-
-
+<br>
+<br>
+<br>
   <!-- Signup Modal -->
   <div class="signup-modal">
     <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -139,261 +140,6 @@
   </div>
   <!--End Menu In Hiddn SideBar -->
   <!-- Filter Content In Hiddn SideBar -->
-  <div class="lefttside-hidden-bar">
-    <div class="hsidebar-header">
-      <div class="sidebar-close-icon"><span class="far fa-times"></span></div>
-    </div>
-    <div class="hsidebar-content">
-      <div class="widget-wrapper">
-        <h6 class="list-title">Find your home</h6>
-        <div class="search_area">
-          <input type="text" class="form-control" placeholder="What are you looking for?">
-          <label><span class="flaticon-search"></span></label>
-        </div>
-      </div>
-      <div class="widget-wrapper">
-        <h6 class="list-title">Listing Status</h6>
-        <div class="radio-element">
-          <div class="form-check d-flex align-items-center mb10">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-            <label class="form-check-label" for="flexRadioDefault4">Buy</label>
-          </div>
-          <div class="form-check d-flex align-items-center mb10">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" checked="checked">
-            <label class="form-check-label" for="flexRadioDefault5">Rent</label>
-          </div>
-          <div class="form-check d-flex align-items-center">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
-            <label class="form-check-label" for="flexRadioDefault6">Sold</label>
-          </div>
-        </div>
-      </div>
-      <div class="widget-wrapper">
-        <h6 class="list-title">Property Type</h6>
-        <div class="checkbox-style1">
-          <label class="custom_checkbox">Houses
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom_checkbox">Apartments
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom_checkbox">Office
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom_checkbox">Villa
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="custom_checkbox">Townhome
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-      </div>
-      <div class="widget-wrapper">
-        <h6 class="list-title">Price Range</h6>
-        <!-- Range Slider Mobile Version -->
-        <div class="range-slider-style2">
-          <div class="range-wrapper">
-            <div class="mb30 mt35" id="slider"></div>
-            <div class="d-flex align-items-center">
-              <span id="slider-range-value1"></span><i class="fa-sharp fa-solid fa-minus mx-2 dark-color icon"></i>
-              <span id="slider-range-value2"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="widget-wrapper">
-        <h6 class="list-title">Bedrooms</h6>
-        <div class="d-flex">
-          <div class="selection">
-            <input id="any2" name="beds" type="radio" checked>
-            <label for="any2">any</label>
-          </div>
-          <div class="selection">
-            <input id="oneplus2" name="beds" type="radio">
-            <label for="oneplus2">1+</label>
-          </div>
-          <div class="selection">
-            <input id="twoplus2" name="beds" type="radio">
-            <label for="twoplus2">2+</label>
-          </div>
-          <div class="selection">
-            <input id="threeplus2" name="beds" type="radio">
-            <label for="threeplus2">3+</label>
-          </div>
-          <div class="selection">
-            <input id="fourplus2" name="beds" type="radio">
-            <label for="fourplus2">4+</label>
-          </div>
-          <div class="selection">
-            <input id="fiveplus2" name="beds" type="radio">
-            <label for="fiveplus2">5+</label>
-          </div>
-        </div>
-      </div>
-      <div class="widget-wrapper">
-        <h6 class="list-title">Bathrooms</h6>
-        <div class="d-flex">
-          <div class="selection">
-            <input id="bathany2" name="bath" type="radio" checked>
-            <label for="bathany2">any</label>
-          </div>
-          <div class="selection">
-            <input id="bathoneplus2" name="bath" type="radio">
-            <label for="bathoneplus2">1+</label>
-          </div>
-          <div class="selection">
-            <input id="bathtwoplus2" name="bath" type="radio">
-            <label for="bathtwoplus2">2+</label>
-          </div>
-          <div class="selection">
-            <input id="baththreeplus2" name="bath" type="radio">
-            <label for="baththreeplus2">3+</label>
-          </div>
-          <div class="selection">
-            <input id="bathfourplus2" name="bath" type="radio">
-            <label for="bathfourplus2">4+</label>
-          </div>
-          <div class="selection">
-            <input id="bathfiveplus2" name="bath" type="radio">
-            <label for="bathfiveplus2">5+</label>
-          </div>
-        </div>
-      </div>
-      <div class="widget-wrapper advance-feature-modal">
-        <h6 class="list-title">Location</h6>
-        <div class="form-style2 input-group">
-          <select class="selectpicker" data-width="100%">
-            <option>All Cities</option>
-            <option data-tokens="California">California</option>
-            <option data-tokens="Chicago">Chicago</option>
-            <option data-tokens="LosAngeles">Los Angeles</option>
-            <option data-tokens="Manhattan">Manhattan</option>
-            <option data-tokens="NewJersey">New Jersey</option>
-            <option data-tokens="NewYork">New York</option>
-            <option data-tokens="SanDiego">San Diego</option>
-            <option data-tokens="SanFrancisco">San Francisco</option>
-            <option data-tokens="Texas">Texas</option>
-          </select>
-        </div>
-      </div>
-      <div class="widget-wrapper">
-        <h6 class="list-title">Square Feet</h6>
-        <div class="space-area">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="form-style1">
-              <input type="text" class="form-control" placeholder="Min.">
-            </div>
-            <span class="dark-color">-</span>
-            <div class="form-style1">
-              <input type="text" class="form-control" placeholder="Max">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="widget-wrapper">
-        <h6 class="list-title">Year Built</h6>
-        <div class="space-area">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="form-style1">
-              <input type="text" class="form-control" placeholder="2019">
-            </div>
-            <span class="dark-color">-</span>
-            <div class="form-style1">
-              <input type="text" class="form-control" placeholder="2022">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="widget-wrapper">
-        <div class="feature-accordion">
-          <div class="accordion" id="accordionExample2">
-            <div class="accordion-item border-none">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button border-none p-0 after-none feature-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"><span class="flaticon-settings"></span> Other Features</button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
-                <div class="accordion-body p-0 mt15">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="checkbox-style1">
-                        <label class="custom_checkbox">Attic
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Basketball court
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Air Conditioning
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Lawn
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">TV Cable
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Dryer
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="checkbox-style1">
-                        <label class="custom_checkbox">Outdoor Shower
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Washer
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Lake view
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Wine cellar
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Front yard
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Refrigerator
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="widget-wrapper mb20">
-        <div class="btn-area d-grid align-items-center">
-          <button class="ud-btn btn-thm"><span class="flaticon-search align-text-top pr10"></span>Search</button>
-        </div>
-      </div>
-      <div class="reset-area d-flex align-items-center justify-content-between">
-        <a class="reset-button" href="#"><span class="flaticon-turn-back"></span><u>Reset all filters</u></a>
-        <a class="reset-button" href="#"><span class="flaticon-favourite"></span><u>Save Search</u></a>
-      </div>
-    </div>
-  </div>
-  <!--End Filter Content In Hiddn SideBar -->
   <div class="advance-feature-modal">
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -408,13 +154,13 @@
               <div class="col-lg-12">
                 <div class="widget-wrapper">
                   <h6 class="list-title">Price Range</h6>
-                  <!-- Range Slider Desktop Version -->
-                  <div class="range-slider-style large-version">
+                  <!-- Range Slider Mobile Version -->
+                  <div class="range-slider-style modal-version">
                     <div class="range-wrapper">
-                      <div class="slider-range mb30 mt35"></div>
-                      <div class="text-center">
-                        <input type="text" class="amount" placeholder="$20"><span class="fa-sharp fa-solid fa-minus mx-2 dark-color"></span>
-                        <input type="text" class="amount2" placeholder="$70987">
+                      <div class="mb30 mt35" id="slider"></div>
+                      <div class="d-flex align-items-center">
+                        <span id="slider-range-value1"></span><i class="fa-sharp fa-solid fa-minus mx-2 dark-color icon"></i>
+                        <span id="slider-range-value2"></span>
                       </div>
                     </div>
                   </div>
@@ -641,66 +387,134 @@
       <div class="header innerpage-style">
         <div class="menu_and_widgets">
           <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
-            <a class="menubar" href="#menu"><img src="assets/images/mobile-dark-nav-icon.svg" alt=""></a>
-            <a class="mobile_logo" href="#"><img src="assets/images/header-logo2.svg" alt=""></a>
-            <a href="page-login.html"><span class=""></span></a>
+            <a class="menubar" href="#menu"><img src="images/mobile-dark-nav-icon.svg" alt=""></a>
+            <a class="mobile_logo" href="#"><img src="images/header-logo2.svg" alt=""></a>
+            <a href="page-login.html"><span class="icon fz18 far fa-user-circle"></span></a>
           </div>
         </div>
       </div>
     </div>
     <!-- /.mobile-menu -->
     <nav id="menu" class="">
-        <ul>
-            <li> <a href='/'>Home</a>
+      <ul>
+        <li><span>Home</span>
+          <ul>
+            <li><a href="index.html">Home V1</a></li>
+            <li><a href="index2.html">Home V2</a></li>
+            <li><a href="index3.html">Home V3</a></li>
+            <li><a href="index4.html">Home V4</a></li>
+            <li><a href="index5.html">Home V5</a></li>
+            <li><a href="index6.html">Home V6</a></li>
+            <li><a href="index7.html">Home V7</a></li>
+            <li><a href="index8.html">Home V8</a></li>
+            <li><a href="index9.html">Home V9</a></li>
+            <li><a href="index10.html">Home V10</a></li>
+          </ul>
+        </li>
+        <li><span>Property Listign</span>
+          <ul>
+            <li><span>Listing Grid</span>
+              <ul>
+                <li><a href="page-grid-default-v1.html">Grid Default v1</a></li>
+                <li><a href="page-grid-default-v2.html">Grid Default v2</a></li>
+                <li><a href="page-property-3-col.html">Grid Full Width 3 Cols</a></li>
+                <li><a href="page-property-4-col.html">Grid Full Width 4 Cols</a></li>
+                <li><a href="page-property-2-col.html">Grid Full Width 2 Cols</a></li>
+                <li><a href="page-property-1-col-v1.html">Grid Full Width 1 Cols v1</a></li>
+                <li><a href="page-property-1-col-v2.html">Grid Full Width 1 Cols v2</a></li>
+                <li><a href="page-property-banner-v1.html">Banner Search v1</a></li>
+                <li><a href="page-property-banner-v2.html">Banner Search v2</a></li>
+              </ul>
             </li>
-            <li> <a href='/rent'>Rent</a>
+            <li><span>List Style</span>
+              <ul>
+                <li><a href="page-property-list.html">Style V1</a></li>
+                <li><a href="page-property-list-all.html">All List</a></li>
+              </ul>
             </li>
-            <li> <a href='/sale'>Sale</a>
+            <li><span>Listing Single</span>
+              <ul>
+                <li><a href="page-property-single-v1.html">Single V1</a></li>
+                <li><a href="page-property-single-v2.html">Single V2</a></li>
+                <li><a href="page-property-single-v3.html">Single V3</a></li>
+                <li><a href="page-property-single-v4.html">Single V4</a></li>
+                <li><a href="page-property-single-v5.html">Single V5</a></li>
+                <li><a href="page-property-single-v6.html">Single V6</a></li>
+                <li><a href="page-property-single-v7.html">Single V7</a></li>
+                <li><a href="page-property-single-v8.html">Single V8</a></li>
+                <li><a href="page-property-single-v9.html">Single V9</a></li>
+                <li><a href="page-property-single-v10.html">Single V10</a></li>
+              </ul>
             </li>
-            <li> <a href='/offplane'>Off plane</a>
+            <li><span>Map Style</span>
+              <ul>
+                <li><a href="page-property-header-map-style.html">Map Header</a></li>
+                <li><a href="page-property-half-map-v1.html">Map V1</a></li>
+                <li><a href="page-property-half-map-v2.html">Map V2</a></li>
+                <li><a href="page-property-half-map-v3.html">Map V3</a></li>
+                <li><a href="page-property-half-map-v4.html">Map V4</a></li>
+              </ul>
             </li>
-            <li> <a href='/services'>Services</a>
-            </li>
-            <li> <a href='/blog'>Blog</a>
-            </li>
-            <li> <a href='/contact'>Contact</a>
-            </li>
-            <li> <a href='/about'>About as</a>
-            </li>
-
+          </ul>
+        </li>
+        <li><span>User Dashboard</span>
+          <ul>
+            <li><a href="page-dashboard.html">Dashboard</a></li>
+            <li><a href="page-dashboard-message.html">Message</a></li>
+            <li><a href="page-dashboard-add-property.html">New Property</a></li>
+            <li><a href="page-dashboard-properties.html">My Properties</a></li>
+            <li><a href="page-dashboard-favorites.html">My Favorites</a></li>
+            <li><a href="page-dashboard-savesearch.html">Saved Search</a></li>
+            <li><a href="page-dashboard-review.html">Reviews</a></li>
+            <li><a href="page-dashboard-package.html">My Package</a></li>
+            <li><a href="page-dashboard-profile.html">My Profile</a></li>
+          </ul>
+        </li>
+        <li><span>Blog</span>
+          <ul>
+            <li><a href="page-blog-v1.html">List V1</a></li>
+            <li><a href="page-blog-v2.html">List V2</a></li>
+            <li><a href="page-blog-v3.html">List V3</a></li>
+            <li><a href="page-blog-single.html">Single</a></li>
+          </ul>
+        </li>
+        <li><span>Pages</span>
+          <ul>
+            <li><a href="page-about.html">About</a></li>
+            <li><a href="page-contact.html">Contact</a></li>
+            <li><a href="page-compare.html">Compare</a></li>
+            <li><a href="page-pricing.html">Pricing</a></li>
+            <li><a href="page-faq.html">Faq</a></li>
+            <li><a href="page-login.html">Login</a></li>
+            <li><a href="page-register.html">Register</a></li>
+            <li><a href="page-error.html">404</a></li>
+            <li><a href="page-invoice.html">Invoices</a></li>
+            <li><a href="page-ui-element.html">UI Elements</a></li>
+          </ul>
+        </li>
+        <li class="px-3 mobile-menu-btn">
+          <a href="page-dashboard-add-property.html" class="ud-btn btn-thm text-white">Submit Property<i class="fal fa-arrow-right-long"></i></a>
+        </li>
         <!-- Only for Mobile View -->
       </ul>
     </nav>
   </div>
-  <div class="body_content">
-    <!-- Breadcumb Sections -->
-    <section class="breadcumb-section bgc-f7">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="breadcumb-style1">
-              <h2 class="title">New York Homes for Sale</h2>
-              <div class="breadcumb-list">
-                <a href="#">Home</a>
-                <a href="#">For Rent</a>
-              </div>
-              <a href="#" class="filter-btn-left mobile-filter-btn d-block d-lg-none"><span class="flaticon-settings"></span> Filter</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Property All Lists -->
-    <section class="pt0 pb90 bgc-f7">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 d-none d-lg-block">
+  <div class="body_content">
+    <!-- Header Banner Style V1 -->
+  <section class="advance-search-menu style2 position-relative pt15 pb5 bb1 dn-992">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="advance-search-list d-flex justify-content-between">
             <div class="dropdown-lists">
-              <ul class="p-0 text-center text-xl-start">
+              <ul class="p-0 mb-0">
+                <li class="list-inline-item position-relative">
+                  <input type="text" class="form-control search-field" placeholder="Enter an address, neighborhood, city, or ZIP code">
+                </li>
                 <li class="list-inline-item position-relative">
                   <button type="button" class="open-btn mb15 dropdown-toggle" data-bs-toggle="dropdown">For Sale <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu">
+                  <div class="dropdown-menu ">
                     <div class="widget-wrapper bdrb1 pb25 mb0 pl20">
                       <h6 class="list-title">Listing Status</h6>
                       <div class="radio-element">
@@ -752,7 +566,7 @@
                       </div>
                     </div>
                     <div class="text-end mt10 pr10">
-                      <button type="button" class="done-btn ud-btn btn-thm dropdown-toggle">Done</button>
+                      <button type="button" class="done-btn ud-btn btn-thm drop_btn2">Done</button>
                     </div>
                   </div>
                 </li>
@@ -782,60 +596,24 @@
                   <div class="dropdown-menu dd4 pb20">
                     <div class="widget-wrapper pl20 pr20">
                       <h6 class="list-title">Bedrooms</h6>
-                      <div class="d-flex">
-                        <div class="selection">
-                          <input id="any" name="beds" type="radio" checked>
-                          <label for="any">any</label>
-                        </div>
-                        <div class="selection">
-                          <input id="oneplus" name="beds" type="radio">
-                          <label for="oneplus">1+</label>
-                        </div>
-                        <div class="selection">
-                          <input id="twoplus" name="beds" type="radio">
-                          <label for="twoplus">2+</label>
-                        </div>
-                        <div class="selection">
-                          <input id="threeplus" name="beds" type="radio">
-                          <label for="threeplus">3+</label>
-                        </div>
-                        <div class="selection">
-                          <input id="fourplus" name="beds" type="radio">
-                          <label for="fourplus">4+</label>
-                        </div>
-                        <div class="selection">
-                          <input id="fiveplus" name="beds" type="radio">
-                          <label for="fiveplus">5+</label>
-                        </div>
+                      <div class="room-list">
+                        <a href="#">Any</a>
+                        <a href="#">1+</a>
+                        <a href="#">2+</a>
+                        <a href="#">3+</a>
+                        <a href="#">4+</a>
+                        <a href="#">5+</a>
                       </div>
                     </div>
                     <div class="widget-wrapper bdrb1 pb25 mb0 pl20 pr20">
                       <h6 class="list-title">Bathrooms</h6>
-                      <div class="d-flex">
-                        <div class="selection">
-                          <input id="baany" name="bath" type="radio" checked>
-                          <label for="baany">any</label>
-                        </div>
-                        <div class="selection">
-                          <input id="baoneplus" name="bath" type="radio">
-                          <label for="baoneplus">1+</label>
-                        </div>
-                        <div class="selection">
-                          <input id="batwoplus" name="bath" type="radio">
-                          <label for="batwoplus">2+</label>
-                        </div>
-                        <div class="selection">
-                          <input id="bathreeplus" name="bath" type="radio">
-                          <label for="bathreeplus">3+</label>
-                        </div>
-                        <div class="selection">
-                          <input id="bafourplus" name="bath" type="radio">
-                          <label for="bafourplus">4+</label>
-                        </div>
-                        <div class="selection">
-                          <input id="bafiveplus" name="bath" type="radio">
-                          <label for="bafiveplus">5+</label>
-                        </div>
+                      <div class="room-list">
+                        <a href="#">Any</a>
+                        <a href="#">1+</a>
+                        <a href="#">2+</a>
+                        <a href="#">3+</a>
+                        <a href="#">4+</a>
+                        <a href="#">5+</a>
                       </div>
                     </div>
                     <div class="text-end mt10 pr10">
@@ -850,8 +628,49 @@
               </ul>
             </div>
           </div>
-          <div class="col-xl-3">
-            <div class="page_control_shorting mb30 d-flex align-items-center justify-content-center justify-content-xl-end">
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="property-header-map p-0">
+      <div class="inner-style1">
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="map" data-map-zoom="7" data-map-scroll="true" style="height: 650px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcumb Sections -->
+    <section class="breadcumb-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcumb-style1">
+              <h2 class="title">New York Homes for Sale</h2>
+              <div class="breadcumb-list">
+                <a href="#">Home</a>
+                <a href="#">For Rent</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Property All Lists -->
+    <section class="pt0 pb90">
+      <div class="container wow fadeInUp" data-wow-delay="300ms">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="text-center text-sm-start">
+              <p class="pagination_page_count">Showing 1–10 of 13 results</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="page_control_shorting d-flex align-items-center justify-content-center justify-content-sm-end">
               <div class="pcs_dropdown pr10"><span>Sort by</span>
                 <select class="selectpicker show-tick">
                   <option>Newest</option>
@@ -866,239 +685,187 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
+        <div class="row mt15">
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
               <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-1.jpg" alt="">
+                <img class="w-100" src="images/listings/map-h-1.jpg" alt="">
                 <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>FEATURED</div>
-                <div class="list-price">$14,000 / <span>mo</span></div>
-              </div>
-              <div class="list-content">
-                <h6 class="list-title"><a href="page-property-single-v1.html">Equestrian Family Home</a></h6>
-                <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
                     <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
                   </div>
                 </div>
               </div>
+              <div class="list-content">
+                <div class="list-price mb-2">$14,000</div>
+                <h6 class="list-title"><a href="page-property-single-v1.html">Equestrian Family Home</a></h6>
+                <p class="list-text">California City, CA, USA</p>
+              </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
               <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-2.jpg" alt="">
-                <div class="list-price">$82,000 / <span>mo</span></div>
+                <img class="w-100" src="images/listings/map-h-2.jpg" alt="">
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
+                    <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
+                  </div>
+                </div>
               </div>
               <div class="list-content">
+                <div class="list-price mb-2">$82,000</div>
                 <h6 class="list-title"><a href="page-property-single-v1.html">Luxury villa in Rego Park</a></h6>
                 <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
-                    <a href="#"><span class="flaticon-like"></span></a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
               <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-3.jpg" alt="">
-                <div class="list-price">$63,000 / <span>mo</span></div>
+                <img class="w-100" src="images/listings/map-h-3.jpg" alt="">
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
+                    <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
+                  </div>
+                </div>
               </div>
               <div class="list-content">
+                <div class="list-price mb-2">$63,000</div>
                 <h6 class="list-title"><a href="page-property-single-v1.html">Villa on Hollywood Boulevard</a></h6>
                 <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
-                    <a href="#"><span class="flaticon-like"></span></a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
               <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-4.jpg" alt="">
-                <div class="list-price">$63,000 / <span>mo</span></div>
-              </div>
-              <div class="list-content">
-                <h6 class="list-title"><a href="page-property-single-v1.html">House on the Northridge</a></h6>
-                <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                <img class="w-100" src="images/listings/map-h-4.jpg" alt="">
+                <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>FEATURED</div>
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
                     <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
-              <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-5.jpg" alt="">
-                <div class="list-price">$14,000 / <span>mo</span></div>
-              </div>
               <div class="list-content">
+                <div class="list-price mb-2">$14,000</div>
                 <h6 class="list-title"><a href="page-property-single-v1.html">Equestrian Family Home</a></h6>
                 <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
-                    <a href="#"><span class="flaticon-like"></span></a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
               <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-6.jpg" alt="">
-                <div class="list-price">$82,000 / <span>mo</span></div>
+                <img class="w-100" src="images/listings/map-h-5.jpg" alt="">
+                <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>FEATURED</div>
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
+                    <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
+                  </div>
+                </div>
               </div>
               <div class="list-content">
+                <div class="list-price mb-2">$14,000</div>
+                <h6 class="list-title"><a href="page-property-single-v1.html">Equestrian Family Home</a></h6>
+                <p class="list-text">California City, CA, USA</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
+              <div class="list-thumb">
+                <img class="w-100" src="images/listings/map-h-6.jpg" alt="">
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
+                    <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="list-content">
+                <div class="list-price mb-2">$14,000</div>
                 <h6 class="list-title"><a href="page-property-single-v1.html">Villa called Archangel</a></h6>
                 <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
-                    <a href="#"><span class="flaticon-like"></span></a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
               <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-7.jpg" alt="">
-                <div class="list-price">$63,000 / <span>mo</span></div>
+                <img class="w-100" src="images/listings/map-h-7.jpg" alt="">
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
+                    <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
+                  </div>
+                </div>
               </div>
               <div class="list-content">
+                <div class="list-price mb-2">$14,000</div>
                 <h6 class="list-title"><a href="page-property-single-v1.html">House In Foxhall Ave, Kingston</a></h6>
                 <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
-                    <a href="#"><span class="flaticon-like"></span></a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
               <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-8.jpg" alt="">
-                <div class="list-price">$63,000 / <span>mo</span></div>
+                <img class="w-100" src="images/listings/map-h-8.jpg" alt="">
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
+                    <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
+                  </div>
+                </div>
               </div>
               <div class="list-content">
+                <div class="list-price mb-2">$14,000</div>
                 <h6 class="list-title"><a href="page-property-single-v1.html">Store in Woodside, New York</a></h6>
                 <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
-                    <a href="#"><span class="flaticon-like"></span></a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="listing-style1">
+          <div class="col-sm-6 col-xl-4">
+            <div class="listing-style6">
               <div class="list-thumb">
-                <img class="w-100" src="assets/images/listings/g3-9.jpg" alt="">
-                <div class="list-price">$82,000 / <span>mo</span></div>
-              </div>
-              <div class="list-content">
-                <h6 class="list-title"><a href="page-property-single-v1.html">Luxury Villa In Los Angeles</a></h6>
-                <p class="list-text">California City, CA, USA</p>
-                <div class="list-meta d-flex align-items-center">
-                  <a href="#"><span class="flaticon-bed"></span>3 bed</a>
-                  <a href="#"><span class="flaticon-shower"></span>4 bath</a>
-                  <a href="#"><span class="flaticon-expand"></span>1200 sqft</a>
-                </div>
-                <hr class="mt-2 mb-2">
-                <div class="list-meta2 d-flex justify-content-between align-items-center">
-                  <span class="for-what">For Rent</span>
-                  <div class="icons d-flex align-items-center">
-                    <a href="#"><span class="flaticon-fullscreen"></span></a>
-                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                <img class="w-100" src="images/listings/map-h-9.jpg" alt="">
+                <div class="list-tag2 fz12">FOR SALE</div>
+                <div class="list-meta">
+                  <div class="icons">
                     <a href="#"><span class="flaticon-like"></span></a>
+                    <a href="#"><span class="flaticon-new-tab"></span></a>
+                    <a href="#"><span class="flaticon-fullscreen"></span></a>
                   </div>
                 </div>
+              </div>
+              <div class="list-content">
+                <div class="list-price mb-2">$14,000</div>
+                <h6 class="list-title"><a href="page-property-single-v1.html">Luxury Villa In Los Angeles</a></h6>
+                <p class="list-text">California City, CA, USA</p>
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 @extends('layout.app')
  @section('content')
 
-
   <!-- Signup Modal -->
   <div class="signup-modal">
     <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -159,44 +158,125 @@
           <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
             <a class="menubar" href="#menu"><img src="images/mobile-dark-nav-icon.svg" alt=""></a>
             <a class="mobile_logo" href="#"><img src="images/header-logo2.svg" alt=""></a>
-            <a href="page-login.html"><span class=""></span></a>
+            <a href="page-login.html"><span class="icon fz18 far fa-user-circle"></span></a>
           </div>
         </div>
       </div>
     </div>
     <!-- /.mobile-menu -->
     <nav id="menu" class="">
-        <ul>
-            <li> <a href='/'>Home</a>
+      <ul>
+        <li><span>Home</span>
+          <ul>
+            <li><a href="index.html">Home V1</a></li>
+            <li><a href="index2.html">Home V2</a></li>
+            <li><a href="index3.html">Home V3</a></li>
+            <li><a href="index4.html">Home V4</a></li>
+            <li><a href="index5.html">Home V5</a></li>
+            <li><a href="index6.html">Home V6</a></li>
+            <li><a href="index7.html">Home V7</a></li>
+            <li><a href="index8.html">Home V8</a></li>
+            <li><a href="index9.html">Home V9</a></li>
+            <li><a href="index10.html">Home V10</a></li>
+          </ul>
+        </li>
+        <li><span>Property Listign</span>
+          <ul>
+            <li><span>Listing Grid</span>
+              <ul>
+                <li><a href="page-grid-default-v1.html">Grid Default v1</a></li>
+                <li><a href="page-grid-default-v2.html">Grid Default v2</a></li>
+                <li><a href="page-property-3-col.html">Grid Full Width 3 Cols</a></li>
+                <li><a href="page-property-4-col.html">Grid Full Width 4 Cols</a></li>
+                <li><a href="page-property-2-col.html">Grid Full Width 2 Cols</a></li>
+                <li><a href="page-property-1-col-v1.html">Grid Full Width 1 Cols v1</a></li>
+                <li><a href="page-property-1-col-v2.html">Grid Full Width 1 Cols v2</a></li>
+                <li><a href="page-property-banner-v1.html">Banner Search v1</a></li>
+                <li><a href="page-property-banner-v2.html">Banner Search v2</a></li>
+              </ul>
             </li>
-            <li> <a href='/rent'>Rent</a>
+            <li><span>List Style</span>
+              <ul>
+                <li><a href="page-property-list.html">Style V1</a></li>
+                <li><a href="page-property-list-all.html">All List</a></li>
+              </ul>
             </li>
-            <li> <a href='/sale'>Sale</a>
+            <li><span>Listing Single</span>
+              <ul>
+                <li><a href="page-property-single-v1.html">Single V1</a></li>
+                <li><a href="page-property-single-v2.html">Single V2</a></li>
+                <li><a href="page-property-single-v3.html">Single V3</a></li>
+                <li><a href="page-property-single-v4.html">Single V4</a></li>
+                <li><a href="page-property-single-v5.html">Single V5</a></li>
+                <li><a href="page-property-single-v6.html">Single V6</a></li>
+                <li><a href="page-property-single-v7.html">Single V7</a></li>
+                <li><a href="page-property-single-v8.html">Single V8</a></li>
+                <li><a href="page-property-single-v9.html">Single V9</a></li>
+                <li><a href="page-property-single-v10.html">Single V10</a></li>
+              </ul>
             </li>
-            <li> <a href='/offplane'>Off plane</a>
+            <li><span>Map Style</span>
+              <ul>
+                <li><a href="page-property-header-map-style.html">Map Header</a></li>
+                <li><a href="page-property-half-map-v1.html">Map V1</a></li>
+                <li><a href="page-property-half-map-v2.html">Map V2</a></li>
+                <li><a href="page-property-half-map-v3.html">Map V3</a></li>
+                <li><a href="page-property-half-map-v4.html">Map V4</a></li>
+              </ul>
             </li>
-            <li> <a href='/services'>Services</a>
-            </li>
-            <li> <a href='/blog'>Blog</a>
-            </li>
-            <li> <a href='/contact'>Contact</a>
-            </li>
-            <li> <a href='/about'>About as</a>
-            </li>
-
+          </ul>
+        </li>
+        <li><span>User Dashboard</span>
+          <ul>
+            <li><a href="page-dashboard.html">Dashboard</a></li>
+            <li><a href="page-dashboard-message.html">Message</a></li>
+            <li><a href="page-dashboard-add-property.html">New Property</a></li>
+            <li><a href="page-dashboard-properties.html">My Properties</a></li>
+            <li><a href="page-dashboard-favorites.html">My Favorites</a></li>
+            <li><a href="page-dashboard-savesearch.html">Saved Search</a></li>
+            <li><a href="page-dashboard-review.html">Reviews</a></li>
+            <li><a href="page-dashboard-package.html">My Package</a></li>
+            <li><a href="page-dashboard-profile.html">My Profile</a></li>
+          </ul>
+        </li>
+        <li><span>Blog</span>
+          <ul>
+            <li><a href="page-blog-v1.html">List V1</a></li>
+            <li><a href="page-blog-v2.html">List V2</a></li>
+            <li><a href="page-blog-v3.html">List V3</a></li>
+            <li><a href="page-blog-single.html">Single</a></li>
+          </ul>
+        </li>
+        <li><span>Pages</span>
+          <ul>
+            <li><a href="page-about.html">About</a></li>
+            <li><a href="page-contact.html">Contact</a></li>
+            <li><a href="page-compare.html">Compare</a></li>
+            <li><a href="page-pricing.html">Pricing</a></li>
+            <li><a href="page-faq.html">Faq</a></li>
+            <li><a href="page-login.html">Login</a></li>
+            <li><a href="page-register.html">Register</a></li>
+            <li><a href="page-error.html">404</a></li>
+            <li><a href="page-invoice.html">Invoices</a></li>
+            <li><a href="page-ui-element.html">UI Elements</a></li>
+          </ul>
+        </li>
+        <li class="px-3 mobile-menu-btn">
+          <a href="page-dashboard-add-property.html" class="ud-btn btn-thm text-white">Submit Property<i class="fal fa-arrow-right-long"></i></a>
+        </li>
         <!-- Only for Mobile View -->
       </ul>
     </nav>
   </div>
 
-  <div class="body_content"></div>
+  <div class="body_content">
     <!-- UI Elements Sections -->
-    <section class="breadcumb-section2 p-0">
+    <section class="breadcumb-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="breadcumb-style1">
-              <h2 class="title">About Us</h2>
+              <h2 class="title">Membership Plans</h2>
               <div class="breadcumb-list">
                 <a href="#">Home</a>
                 <a href="#">For Rent</a>
@@ -207,227 +287,108 @@
       </div>
     </section>
 
-    <!-- Our About Area -->
-    <section class="our-about pb90">
+    <!-- Pricing Section Area -->
+    <section class="our-pricing pb90 pt-0">
       <div class="container">
-        <div class="row wow fadeInUp" data-wow-delay="300ms">
-          <div class="col-lg-6">
-            <h2>We're on a Mission to Change <br class="d-none d-lg-block"> View of Real Estate Field.</h2>
-          </div>
-          <div class="col-lg-6">
-            <p class="text mb25">It doesn’t matter how organized you are — a surplus of toys will always ensure your house is a mess waiting to happen. Fortunately, getting kids on board with the idea of ditching their stuff is a lot easier than it sounds.</p>
-            <p class="text mb55">Maecenas quis viverra metus, et efficitur ligula. Nam congue augue et ex congue, sed luctus lectus congue. Integer convallis condimentum sem. Duis elementum tortor eget condimentum tempor. Praesent sollicitudin lectus ut pharetra pulvinar.</p>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="why-chose-list style3">
-                  <div class="list-one mb30">
-                    <span class="list-icon flex-shrink-0 flaticon-garden mb20"></span>
-                    <div class="list-content flex-grow-1">
-                      <h6 class="mb-1">Modern Villa</h6>
-                      <p class="text mb-0 fz14">Nullam sollicitudin blandit <br class="d-none d-sm-block"> Nullam maximus.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="why-chose-list style3">
-                  <div class="list-one mb30">
-                    <span class="list-icon flex-shrink-0 flaticon-secure-payment mb20"></span>
-                    <div class="list-content flex-grow-1">
-                      <h6 class="mb-1">Secure Payment</h6>
-                      <p class="text mb-0 fz14">Nullam sollicitudin blandit <br class="d-none d-sm-block"> Nullam maximus.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="row wow fadeInUp" data-wow-delay="100ms">
+          <div class="col-lg-6 offset-lg-3">
+            <div class="main-title text-center mb30">
+              <h2>Membership Plans</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- About Banner -->
-    <section class="our-about pt-0">
-      <div class="container">
-        <div class="row wow fadeInUp" data-wow-delay="300ms">
+        <div class="row wow fadeInUp" data-wow-delay="200ms">
           <div class="col-lg-12">
-            <div class="about-page-img">
-              <img class="w-100" src="images/about/about-page-banner.jpg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Funfact -->
-    <section class="pt-0">
-      <div class="container">
-        <div class="row justify-content-center wow fadeInUp" data-wow-delay="300ms">
-          <div class="col-md-4">
-            <div class="funfact_one text-center">
-              <div class="details">
-                <ul class="ps-0 mb-0 d-flex justify-content-center">
-                  <li><div class="timer">4</div></li>
-                  <li><span>M</span></li>
-                </ul>
-                <p class="text mb-0">Awward Winning</p>
+            <div class="pricing_packages_top d-flex align-items-center justify-content-center mb60">
+              <div class="toggle-btn">
+                <span class="pricing_save1 ff-heading">Billed Monthly</span>
+                <label class="switch">
+                  <input type="checkbox" id="checbox" onclick="check()"/>
+                  <span class="pricing_table_switch_slide round"></span>
+                </label>
+                <span class="pricing_save2 ff-heading">Billed Yearly</span>
+                <span class="pricing_save3">Save 20%</span>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="funfact_one text-center">
-              <div class="details">
-                <ul class="ps-0 mb-0 d-flex justify-content-center">
-                  <li><div class="timer">12</div></li>
-                  <li><span>K</span></li>
-                </ul>
-                <p class="text mb-0">Property Ready</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="funfact_one text-center">
-              <div class="details">
-                <ul class="ps-0 mb-0 d-flex justify-content-center">
-                  <li><div class="timer">20</div></li>
-                  <li><span>M</span></li>
-                </ul>
-                <p class="text mb-0">Happy Customer</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Agents -->
-    <section class="pt-0 pb80 pb50-md">
-      <div class="container">
-        <div class="row wow fadeInUp" data-wow-delay="300ms">
-          <div class="col-lg-9 mx-auto text-center">
-            <div class="main-title2">
-              <h2 class="title">Our Exclusive Agents</h2>
-              <p class="paragraph">Aliquam lacinia diam quis lacus euismod</p>
             </div>
           </div>
         </div>
         <div class="row wow fadeInUp" data-wow-delay="300ms">
-          <div class="col-auto">
-            <div class="feature-style2 mb30">
-              <div class="feature-img"><img class="bdrs12" src="images/team/agent-1.jpg" alt=""></div>
-              <div class="feature-content pt20">
-                <h6 class="title mb-1">Arlene McCoy</h6>
-                <p class="text fz15">Broker</p>
+          <div class="col-md-6 col-xl-4">
+            <div class="pricing_packages">
+              <div class="heading mb60">
+                <h4 class="package_title">Basic</h4>
+                <h1 class="text2">Free</h1>
+                <h1 class="text1">Free</h1>
+                <p class="text">per month</p>
+                <img class="price-icon" src="images/icon/pricing-icon-2.svg" alt="">
               </div>
-            </div>
-          </div>
-          <div class="col-auto">
-            <div class="feature-style2 mb30">
-              <div class="feature-img"><img class="bdrs12" src="images/team/agent-2.jpg" alt=""></div>
-              <div class="feature-content pt20">
-                <h6 class="title mb-1">Esther Howard</h6>
-                <p class="text fz15">Broker</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-auto">
-            <div class="feature-style2 mb30">
-              <div class="feature-img"><img class="bdrs12" src="images/team/agent-3.jpg" alt=""></div>
-              <div class="feature-content pt20">
-                <h6 class="title mb-1">Cody Fisher</h6>
-                <p class="text fz15">Broker</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-auto">
-            <div class="feature-style2 mb30">
-              <div class="feature-img"><img class="bdrs12" src="images/team/agent-4.jpg" alt=""></div>
-              <div class="feature-content pt20">
-                <h6 class="title mb-1">Bessie Cooper</h6>
-                <p class="text fz15">Broker</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-auto">
-            <div class="feature-style2 mb30">
-              <div class="feature-img"><img class="bdrs12" src="images/team/agent-5.jpg" alt=""></div>
-              <div class="feature-content pt20">
-                <h6 class="title mb-1">Guy Hawkins</h6>
-                <p class="text fz15">Broker</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Banner -->
-    <section class="pt-0">
-      <div class="cta-banner3 bgc-thm-light mx-auto maxw1600 pt100 pt60-lg pb90 pb60-lg bdrs24 position-relative overflow-hidden mx20-lg">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-lg-5 pl30-md pl15-xs wow fadeInRight" data-wow-delay="500ms">
-              <div class="mb30">
-                <h2 class="title text-capitalize">Let’s find the right <br class="d-none d-md-block"> selling option for you</h2>
-              </div>
-              <div class="why-chose-list style2">
-                <div class="list-one d-flex align-items-start mb30">
-                  <span class="list-icon flex-shrink-0 flaticon-security"></span>
-                  <div class="list-content flex-grow-1 ml20">
-                    <h6 class="mb-1">Property Management</h6>
-                    <p class="text mb-0 fz15">Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.</p>
-                  </div>
+              <div class="details">
+                <p class="text mb35">Standard listing submission, active for 30 dayss</p>
+                <div class="list-style1 mb40">
+                  <ul>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>All Operating Supported</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Great Interface</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Allows encryption</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Face recognized system</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>24/7 Full support</li>
+                  </ul>
                 </div>
-                <div class="list-one d-flex align-items-start mb30">
-                  <span class="list-icon flex-shrink-0 flaticon-keywording"></span>
-                  <div class="list-content flex-grow-1 ml20">
-                    <h6 class="mb-1">Mortgage Services</h6>
-                    <p class="text mb-0 fz15">Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.</p>
-                  </div>
-                </div>
-                <div class="list-one d-flex align-items-start mb30">
-                  <span class="list-icon flex-shrink-0 flaticon-investment"></span>
-                  <div class="list-content flex-grow-1 ml20">
-                    <h6 class="mb-1">Currency Services</h6>
-                    <p class="text mb-0 fz15">Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.</p>
-                  </div>
+                <div class="d-grid">
+                  <a href="#" class="ud-btn btn-thm-border text-thm">Join<i class="fal fa-arrow-right-long"></i></a>
                 </div>
               </div>
-              <a href="page-property-single-v1.html" class="ud-btn btn-dark">Learn More<i class="fal fa-arrow-right-long"></i></a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Partners -->
-    <section class="our-partners p-0">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
-            <div class="main-title text-center">
-              <h6>Trusted by the world’s best</h6>
+          <div class="col-md-6 col-xl-4">
+            <div class="pricing_packages active">
+              <div class="heading mb60">
+                <h4 class="package_title">Professional</h4>
+                <h1 class="text2">$199.95</h1>
+                <h1 class="text1">$599.95</h1>
+                <p class="text">per month</p>
+                <img class="price-icon" src="images/icon/pricing-icon-1.svg" alt="">
+              </div>
+              <div class="details">
+                <p class="text mb35">Standard listing submission, active for 30 dayss</p>
+                <div class="list-style1 mb40">
+                  <ul>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>All Operating Supported</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Great Interface</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Allows encryption</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Face recognized system</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>24/7 Full support</li>
+                  </ul>
+                </div>
+                <div class="d-grid">
+                  <a href="#" class="ud-btn btn-thm-border text-thm">Join<i class="fal fa-arrow-right-long"></i></a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-lg-12">
-            <div class="dots_none nav_none slider-dib-sm slider-6-grid owl-carousel owl-theme wow fadeInUp" data-wow-delay="300ms">
-              <div class="item">
-                <div class="partner_item"><img class="wa m-auto" src="images/partners/1.png" alt="1.png"></div>
+          <div class="col-md-6 col-xl-4">
+            <div class="pricing_packages">
+              <div class="heading mb60">
+                <h4 class="package_title">Business</h4>
+                <h1 class="text2">$399.95</h1>
+                <h1 class="text1">$999.95</h1>
+                <p class="text">per month</p>
+                <img class="price-icon" src="images/icon/pricing-icon-3.svg" alt="">
               </div>
-              <div class="item">
-                <div class="partner_item"><img class="wa m-auto" src="images/partners/2.png" alt="2.png"></div>
-              </div>
-              <div class="item">
-                <div class="partner_item"><img class="wa m-auto" src="images/partners/3.png" alt="3.png"></div>
-              </div>
-              <div class="item">
-                <div class="partner_item"><img class="wa m-auto" src="images/partners/4.png" alt="4.png"></div>
-              </div>
-              <div class="item">
-                <div class="partner_item"><img class="wa m-auto" src="images/partners/5.png" alt="5.png"></div>
-              </div>
-              <div class="item">
-                <div class="partner_item"><img class="wa m-auto" src="images/partners/6.png" alt="6.png"></div>
+              <div class="details">
+                <p class="text mb35">Standard listing submission, active for 30 dayss</p>
+                <div class="list-style1 mb40">
+                  <ul>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>All Operating Supported</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Great Interface</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Allows encryption</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>Face recognized system</li>
+                    <li><i class="far fa-check text-white bgc-dark fz15"></i>24/7 Full support</li>
+                  </ul>
+                </div>
+                <div class="d-grid">
+                  <a href="#" class="ud-btn btn-thm-border text-thm">Join<i class="fal fa-arrow-right-long"></i></a>
+                </div>
               </div>
             </div>
           </div>
@@ -436,7 +397,7 @@
     </section>
 
     <!-- Our CTA -->
-    <section class="our-cta">
+    <section class="our-cta pt0">
       <div class="cta-banner bgc-f7 mx-auto maxw1600 pt120 pb120 pt60-md pb60-md bdrs12 position-relative mx20-lg">
         <div class="img-box-5">
           <img class="img-1 spin-right" src="images/about/element-1.png" alt="">
@@ -463,4 +424,4 @@
       </div>
     </section>
 
-    @endsection
+     @endsection
