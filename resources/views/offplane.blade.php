@@ -159,28 +159,30 @@
           <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
             <a class="menubar" href="#menu"><img src="assets/images/mobile-dark-nav-icon.svg" alt=""></a>
             <a class="mobile_logo" href="#"><img src="assets/images/header-logo2.svg" alt=""></a>
-            <a href="page-login.html"><span class="icon fz18 far fa-user-circle"></span></a>
+            <a href="page-login.html"><span class=""></span></a>
           </div>
         </div>
       </div>
     </div>
     <!-- /.mobile-menu -->
     <nav id="menu" class="">
-      <ul>
-        <li> <a href="index.html">Home</a>
-        </li>
-        <li> <a href="rent.html">Rent</a>
-        </li>
-        <li> <a href="sale.html">Sale</a>
-        </li>
-        <li> <a href="off plane.html">Off plane</a>
-        </li>
-        <li> <a href="about.html">About as</a>
-        </li>
-        <li> <a href="blog.html">Blog</a>
-        </li>
-        <li> <a href="page-contact.html">Contact</a>
-        </li>
+        <ul>
+            <li> <a href='/'>Home</a>
+            </li>
+            <li> <a href='/rent'>Rent</a>
+            </li>
+            <li> <a href='/sale'>Sale</a>
+            </li>
+            <li> <a href='/offplane'>Off plane</a>
+            </li>
+            <li> <a href='/services'>Services</a>
+            </li>
+            <li> <a href='/blog'>Blog</a>
+            </li>
+            <li> <a href='/contact'>Contact</a>
+            </li>
+            <li> <a href='/about'>About as</a>
+            </li>
 
         <!-- Only for Mobile View -->
       </ul>

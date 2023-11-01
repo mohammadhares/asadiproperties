@@ -50,10 +50,10 @@
                         <div class="col-auto">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="logos mr40">
-                                    <a class="header-logo logo1" href="index.html"><img
-                                            src="assets/images/header-logo.svg" alt="Header Logo"></a>
-                                    <a class="header-logo logo2" href="index.html"><img
-                                            src="assets/images/header-logo2.svg" alt="Header Logo"></a>
+                                    <a class="header-logo logo1" href='/'><img
+                                            src="assets/images/logo.1.png" alt="Header Logo"></a>
+                                    <a class="header-logo logo2" href='/'><img
+                                            src="assets/images/logo.1.png" alt=" Logo"></a>
                                 </div>
                                 <!-- Responsive Menu Structure-->
                                 <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal ">
@@ -69,8 +69,8 @@
                                     <li class="visible_list"> <a class="list-item" href='/offplane'><span
                                                 class="title">OFF PLANE</span></a>
                                     </li>
-                                    <li class="visible_list"> <a class="list-item" href='/about'><span
-                                                class="title">ABOUT US</span></a>
+                                    <li class="visible_list"> <a class="list-item" href='/services'><span
+                                                class="title">SERVICES</S></span></a>
                                     </li>
                                     <li class="visible_list"> <a class="list-item" href='/blog'><span
                                                 class="title">BlOG</span></a>
@@ -78,6 +78,9 @@
                                     <li class="visible_list"> <a class="list-item" href='/contact'><span
                                                 class="title">CONTACT</span></a>
                                     </li>
+                                    <li class="visible_list"> <a class="list-item" href='/about'><span
+                                        class="title">ABOUT US</span></a>
+                            </li>
                                 </ul>
                             </div>
                         </div>
@@ -91,6 +94,8 @@
 
 
 
+
+
         <!-- Our Footer -->
         <section class="footer-style1 pt60 pb-0">
             <div class="container">
@@ -98,7 +103,7 @@
                     <div class="col-lg-5">
                         <div class="footer-widget mb-4 mb-lg-5">
                             <a class="footer-logo" href="index.html"><img class="mb40"
-                                    src="assets/images/header-logo.svg" alt=""></a>
+                                    src="assets/images/logo.svg" alt=""></a>
                             <div class="social-widget">
                                 <h6 class="text-white mb20">About Us</h6>
                                 <div class="about__info">
@@ -158,13 +163,14 @@
                                     <div class="link-style1 mb-3">
                                         <h6 class="text-white mb25">Main Menus</h6>
                                         <div class="link-list">
-                                            <a href="#">Home</a>
-                                            <a href="#">Rent</a>
-                                            <a href="#">Sale</a>
-                                            <a href="#">Off Plane</a>
-                                            <a href="#">Services</a>
-                                            <a href="#">About Us</a>
-                                            <a href="#">Contact Us</a>
+                                            <a href='/'>Home</a>
+                                            <a href='/rent'>Rent</a>
+                                            <a href='/sale'>Sale</a>
+                                            <a href='/ofplane'>Off Plane</a>
+                                            <a href='/services'>Services</a>
+                                            <a href='/blog'>blog</a>
+                                            <a href='/contact'>Contact Us</a>
+                                            <a href='/about'>About Us</a>
                                         </div>
                                     </div>
                                 </div>
@@ -186,13 +192,13 @@
                                     <div class="link-style1 mb-3">
                                         <h6 class="text-white mb25">Quick Links</h6>
                                         <ul class="ps-0">
-                                            <li><a href="#">Terms of Use</a></li>
-                                            <li><a href="#">Privacy Policy</a></li>
-                                            <li><a href="#">Pricing Plans</a></li>
-                                            <li><a href="#">Our Services</a></li>
-                                            <li><a href="#">Contact Support</a></li>
-                                            <li><a href="#">Careers</a></li>
-                                            <li><a href="#">FAQs</a></li>
+                                            <li><a href='/termsof'>Terms of Use</a></li>
+                                            <li><a href='/privaecy'>Privacy Policy</a></li>
+                                            <li><a href='/pricing'>Pricing Plans</a></li>
+                                            <li><a href='/services'>Our Services</a></li>
+                                            <li><a href='/contact'>Contact Support</a></li>
+                                            <li><a href='/careers'>Careers</a></li>
+                                            <li><a href='/FAQs'>FAQs</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -222,8 +228,8 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="text-center text-lg-end">
-                            <p class="footer-menu ff-heading text-gray"><a class="text-gray" href="#">Privacy</a> · <a
-                                    class="text-gray" href="#">Terms</a> · <a class="text-gray" href="#">Sitemap</a></p>
+                            <p class="footer-menu ff-heading text-gray"><a class="text-gray" href='/privaecy'>Privacy</a> · <a
+                                    class="text-gray" href='/termsof'>Terms</a> · <a class="text-gray" href='/sitemap'>Sitemap</a></p>
                         </div>
                     </div>
                 </div>
@@ -245,6 +251,12 @@
     <script src="../../assets/js/owl.js"></script>
     <script src="../../assets/js/parallax.js"></script>
     <script src="../../assets/js/pricing-slider.js"></script>
+    <!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&amp;callback=initMap"></script>
+<script src="../../assets/js/infobox.min.js"></script>
+<script src="../../assets/markerclusterer.js"></script>
+<script src="../../assets/maps.js"></script>
+<!-- Google Maps -->
     <!-- Custom script for all pages -->
     <script src="../../assets/js/script.js"></script>
 </body>

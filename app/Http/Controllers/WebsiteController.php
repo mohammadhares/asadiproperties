@@ -70,5 +70,47 @@ class WebsiteController extends Controller
             'siteInfo' => $this->siteInfo,
         ]);
     }
-
+    public function services()
+    {
+        return view('services', [
+            'siteInfo' => $this->siteInfo,
+        ]);
+    }
+    // discover
+    public function termsof()
+    {
+        return view('termsof', [
+            'siteInfo' => $this->siteInfo,
+        ]);
+    }
+    public function privaecy()
+    {
+        return view('privaecy', [
+            'siteInfo' => $this->siteInfo,
+        ]);
+    }
+    public function pricing()
+    {
+        return view('pricing', [
+            'siteInfo' => $this->siteInfo,
+        ]);
+    }
+    public function careers()
+    {
+        return view('careers', [
+            'siteInfo' => $this->siteInfo,
+        ]);
+    }
+    public function FAQs()
+    {
+        return view('FAQs', [
+            'siteInfo' => $this->siteInfo,
+        ]);
+    }
+    public function sitemap()
+    {
+        return view('sitemap', [
+            'siteInfo' => $this->siteInfo,
+        ]);
+    }
 }

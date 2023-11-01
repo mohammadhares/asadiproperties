@@ -166,7 +166,6 @@
     </div>
     <!-- /.mobile-menu -->
     <nav id="menu" class="">
-      <ul>
         <ul>
             <li> <a href='/'>Home</a>
             </li>
@@ -184,7 +183,6 @@
             </li>
             <li> <a href='/about'>About as</a>
             </li>
-
         <!-- Only for Mobile View -->
       </ul>
     </nav>
@@ -197,10 +195,10 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="breadcumb-style1">
-              <h2 class="title">Blog</h2>
+              <h2 class="title">Services</h2>
               <div class="breadcumb-list">
                 <a href="index.html">Home</a>
-                <a href="#">Contact</a>
+                <a href='/services'>Services</a>
               </div>
             </div>
           </div>
