@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SubscribeController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,24 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/blog', function () {
-    return view('blog');
-});
-Route::get('/offplane', function () {
-    return view('offplane');
-});
-Route::get('/rent', function () {
-    return view('rent');
-});
-Route::get('/sale', function () {
-    return view('sale');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::GET('/', [WebsiteController::class, 'home']);
+Route::GET('/rent', [WebsiteController::class, 'rent']);
+Route::GET('/sale', [WebsiteController::class, 'sale']);
+Route::GET('/offplane', [WebsiteController::class, 'offplane']);
+Route::GET('/contact', [WebsiteController::class, 'contact']);
+Route::GET('/blog', [WebsiteController::class, 'blog']);
+Route::GET('/about', [WebsiteController::class, 'about']);
+Route::POST('/subscribe', [SubscribeController::class, 'subscribe'])->name('subscribe');

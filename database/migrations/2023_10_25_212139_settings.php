@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->text('phones');
-            $table->text('emails');
-            $table->text('socialmedias');
+            $table->json('phones');
+            $table->json('emails');
+            $table->json('socialmedias');
+            $table->string('address');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('modified_by');
             $table->timestamps();
         });
     }
