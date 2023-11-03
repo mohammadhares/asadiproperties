@@ -25,21 +25,15 @@
     <!-- Responsive stylesheet -->
     <link rel="stylesheet" href="../../css/responsive.css">
     <!-- Title -->
-    <title>ASADI</title>
+    <title>Asadi Properties</title>
     <!-- Favicon -->
     <link href="assets/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
     <link href="assets/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
-    <!-- Apple Touch Icon -->
-    <link href="assets/images/apple-touch-icon-60x60.png" sizes="60x60" rel="apple-touch-icon">
-    <link href="assets/images/apple-touch-icon-72x72.png" sizes="72x72" rel="apple-touch-icon">
-    <link href="assets/images/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
-    <link href="assets/images/apple-touch-icon-180x180.png" sizes="180x180" rel="apple-touch-icon">
-
 </head>
 
 <body>
     <div class="wrapper ovh">
-        <div class="preloader"></div>
+        {{-- <div class="preloader"></div> --}}
 
         <!-- Main Header Nav -->
         <header class="header-nav nav-homepage-style stricky main-menu">
@@ -50,37 +44,36 @@
                         <div class="col-auto">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="logos mr40">
-                                    <a class="header-logo logo1" href='/'><img
-                                            src="assets/images/logo.1.png" alt="Header Logo"></a>
-                                    <a class="header-logo logo2" href='/'><img
-                                            src="assets/images/logo.1.png" alt=" Logo"></a>
+                                    <a class="header-logo logo1" href='/'>
+                                        <img src="{{ asset('assets/images/logo.1.png') }}" alt="Header Logo">
+                                    </a>
+                                    <a class="header-logo logo2" href='/'>
+                                        <img src="{{ asset('assets/images/logo.1.png') }}" alt="Header Logo">
+                                    </a>
                                 </div>
                                 <!-- Responsive Menu Structure-->
                                 <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal ">
-                                    <li class="visible_list"> <a class="list-item" href='/'><span
-                                                class="title">HOME</span></a>
+                                    <li class="visible_list {{ request()->is('/') ? 'menus-active' : '' }}">
+                                        <a class="list-item" href='/'><span class="title">HOME</span></a>
                                     </li>
-                                    <li class="megamenu_style"> <a class="list-item" href='/rent'><span
-                                                class="title">RENT</span></a>
+                                    <li class="visible_list {{ request()->is('rent') ? 'menus-active' : '' }}">
+                                        <a class="list-item" href='/rent'><span class="title">RENT</span></a>
                                     </li>
-                                    <li class="visible_list"> <a class="list-item" href='/sale'><span
-                                                class="title">SALE</span></a>
+                                    <li class="visible_list {{ request()->is('sale') ? 'menus-active' : '' }}">
+                                        <a class="list-item" href='/sale'><span class="title">SALE</span></a>
                                     </li>
-                                    <li class="visible_list"> <a class="list-item" href='/offplane'><span
-                                                class="title">OFF PLANE</span></a>
+                                    <li class="visible_list {{ request()->is('offplane') ? 'menus-active' : '' }}">
+                                        <a class="list-item" href='/offplane'><span class="title">OFF PLANE</span></a>
                                     </li>
-                                    <li class="visible_list"> <a class="list-item" href='/services'><span
-                                                class="title">SERVICES</S></span></a>
+                                    <li class="visible_list {{ request()->is('blog') ? 'menus-active' : '' }}">
+                                        <a class="list-item" href='/blog'><span class="title">BlOG</span></a>
                                     </li>
-                                    <li class="visible_list"> <a class="list-item" href='/blog'><span
-                                                class="title">BlOG</span></a>
+                                    <li class="visible_list {{ request()->is('contact') ? 'menus-active' : '' }}">
+                                        <a class="list-item" href='/contact'><span class="title">CONTACT</span></a>
                                     </li>
-                                    <li class="visible_list"> <a class="list-item" href='/contact'><span
-                                                class="title">CONTACT</span></a>
+                                    <li class="visible_list {{ request()->is('about') ? 'menus-active' : '' }}">
+                                        <a class="list-item" href='/about'><span class="title">ABOUT US</span></a>
                                     </li>
-                                    <li class="visible_list"> <a class="list-item" href='/about'><span
-                                        class="title">ABOUT US</span></a>
-                            </li>
                                 </ul>
                             </div>
                         </div>
@@ -88,6 +81,42 @@
                 </div>
             </nav>
         </header>
+
+        <div id="page" class="mobilie_header_nav stylehome1">
+            <div class="mobile-menu">
+              <div class="header innerpage-style">
+                <div class="menu_and_widgets">
+                  <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
+                    <a class="menubar" href="#menu"><img src="assets/images/mobile-dark-nav-icon.svg" alt=""></a>
+                    <a class="mobile_logo" href="#"><img width="100px" src="{{ asset('assets/images/logo.1.png')}}" alt=""></a>
+                    <a href="page-login.html"><span class=""></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.mobile-menu -->
+            <nav id="menu" class="">
+                <ul>
+                    <li> <a href='/'>Home</a>
+                    </li>
+                    <li> <a href='/rent'>Rent</a>
+                    </li>
+                    <li> <a href='/sale'>Sale</a>
+                    </li>
+                    <li> <a href='/offplane'>Off plane</a>
+                    </li>
+                    <li> <a href='/services'>Services</a>
+                    </li>
+                    <li> <a href='/blog'>Blog</a>
+                    </li>
+                    <li> <a href='/contact'>Contact</a>
+                    </li>
+                    <li> <a href='/about'>About as</a>
+                    </li>
+                <!-- Only for Mobile View -->
+              </ul>
+            </nav>
+          </div>
 
 
         @yield('content')
@@ -102,14 +131,12 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="footer-widget mb-4 mb-lg-5">
-                            <a class="footer-logo" href="index.html"><img class="mb40"
-                                    src="assets/images/logo.svg" alt=""></a>
+                            <a class="footer-logo" href="/">
+                                <img class="mb40" src="{{ asset('assets/images/logo.1.png')}}" alt=""></a>
                             <div class="social-widget">
                                 <h6 class="text-white mb20">About Us</h6>
                                 <div class="about__info">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error provident
-                                        reiciendis magni sit eveniet ea id dolorum dignissimos unde, architecto
-                                        quibusdam similique at accusantium molestiae quas recusandae ullam culpa maxime.
+                                    <p>{{ $siteInfo->about }}
                                     </p>
                                 </div>
                             </div>
@@ -153,10 +180,16 @@
                                 <div class="mailchimp-style1">
                                     <form method="POST" action="{{ route('subscribe') }}">
                                         @csrf
-                                        <input required type="email" name="email" class="form-control" placeholder="Your Email">
+                                        <input required type="email" name="email" class="form-control"
+                                            placeholder="Your Email">
                                         <button type="submit">Subscribe</button>
                                     </form>
                                 </div>
+                                @if(session('subscribe-success'))
+                                    <div class="alert alert-success mt-4" style="margin-top: 10px">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between">
                                 <div class="col-auto">
@@ -167,7 +200,6 @@
                                             <a href='/rent'>Rent</a>
                                             <a href='/sale'>Sale</a>
                                             <a href='/ofplane'>Off Plane</a>
-                                            <a href='/services'>Services</a>
                                             <a href='/blog'>blog</a>
                                             <a href='/contact'>Contact Us</a>
                                             <a href='/about'>About Us</a>
@@ -178,13 +210,13 @@
                                     <div class="link-style1 mb-3">
                                         <h6 class="text-white mb25">Popular Search</h6>
                                         <div class="link-list">
-                                            <a href="#">Apartment for Rent</a>
-                                            <a href="#">Apartment Low to hide</a>
-                                            <a href="#">Offices for Buy</a>
-                                            <a href="#">Offices for Rent</a>
-                                            <a href="#">Rooms for Rent</a>
-                                            <a href="#">Rooms for Buy</a>
-                                            <a href="#">Off Plane</a>
+                                            <a href="/rent">Apartment for Rent</a>
+                                            <a href="/sale">Apartment Low to hide</a>
+                                            <a href="/sale">Offices for Buy</a>
+                                            <a href="/rent">Offices for Rent</a>
+                                            <a href="/rent">Rooms for Rent</a>
+                                            <a href="/sale">Rooms for Buy</a>
+                                            <a href="/offplane">Off Plane</a>
                                         </div>
                                     </div>
                                 </div>
@@ -206,13 +238,13 @@
                                     <div class="link-style1 mb-3">
                                         <h6 class="text-white mb25">Discover</h6>
                                         <ul class="ps-0">
-                                            <li><a href="#">Miami</a></li>
-                                            <li><a href="#">Los Angeles</a></li>
-                                            <li><a href="#">Chicago</a></li>
-                                            <li><a href="#">New York</a></li>
-                                            <li><a href="#">UAE</a></li>
-                                            <li><a href="#">Qatar</a></li>
-                                            <li><a href="#">Malysia</a></li>
+                                            <li><a href="/sale">Miami</a></li>
+                                            <li><a href="/sale">Los Angeles</a></li>
+                                            <li><a href="/sale">Chicago</a></li>
+                                            <li><a href="/sale">New York</a></li>
+                                            <li><a href="/sale">UAE</a></li>
+                                            <li><a href="/sale">Qatar</a></li>
+                                            <li><a href="/sale">Malysia</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -228,8 +260,10 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="text-center text-lg-end">
-                            <p class="footer-menu ff-heading text-gray"><a class="text-gray" href='/privaecy'>Privacy</a> · <a
-                                    class="text-gray" href='/termsof'>Terms</a> · <a class="text-gray" href='/sitemap'>Sitemap</a></p>
+                            <p class="footer-menu ff-heading text-gray"><a class="text-gray"
+                                    href='/privaecy'>Privacy</a> · <a class="text-gray" href='/termsof'>Terms</a> ·
+                                <a class="text-gray" href='/sitemap'>Sitemap</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -251,12 +285,8 @@
     <script src="../../assets/js/owl.js"></script>
     <script src="../../assets/js/parallax.js"></script>
     <script src="../../assets/js/pricing-slider.js"></script>
-    <!-- Google Maps -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&amp;callback=initMap"></script>
-<script src="../../assets/js/infobox.min.js"></script>
-<script src="../../assets/markerclusterer.js"></script>
-<script src="../../assets/maps.js"></script>
-<!-- Google Maps -->
+    <script src="../../assets/js/infobox.min.js"></script>
+    <script src="../../assets/markerclusterer.js"></script>
     <!-- Custom script for all pages -->
     <script src="../../assets/js/script.js"></script>
 </body>

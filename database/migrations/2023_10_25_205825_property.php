@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
+            $table->string('city');
+            $table->string('country');
             $table->string('address');
+            $table->string('thumbnail');
             $table->double('longitude');
             $table->double('latitude');
             $table->integer('price');
@@ -26,7 +29,7 @@ return new class extends Migration
             $table->text('features');
             $table->string('property_type');
             $table->string('status');
-            $table->integer('created_by');
+            $table->integer('modified_by');
             $table->timestamps();
         });
     }

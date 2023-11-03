@@ -18,7 +18,7 @@ class SubscribeController extends Controller
         $subscribe->save();
 
         if($subscribe){
-            return redirect()->back()->with('success', 'Your Email Send Successfully');
+            return redirect()->back()->with('subscribe-success', 'Your Email Send Successfully');
         }else{
             return redirect()->back()->with('error', 'Sorry, Something went wrong');
         }

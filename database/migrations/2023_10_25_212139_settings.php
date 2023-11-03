@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->text('about');
+            $table->text('privacy');
+            $table->text('condations');
             $table->json('phones');
             $table->json('emails');
             $table->json('socialmedias');

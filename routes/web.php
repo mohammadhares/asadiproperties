@@ -30,4 +30,7 @@ Route::GET('/pricing', [WebsiteController::class, 'pricing']);
 Route::GET('/careers', [WebsiteController::class, 'careers']);
 Route::GET('/FAQs', [WebsiteController::class, 'FAQs']);
 Route::GET('/sitemap', [WebsiteController::class, 'sitemap']);
-
+Route::GET('/propery/{id}', [WebsiteController::class, 'singleProperty'])->name('single.property');
+Route::GET('/search', [WebsiteController::class, 'search'])->name('search');
+Route::GET('/advance-search', [WebsiteController::class, 'advanceSearch'])->name('advance.search');
+Route::POST('/contact', [WebsiteController::class, 'storeContact'])->name('store.contact');

@@ -17,20 +17,23 @@ class PropertyFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $faker->sentence,
-            'content' => $faker->paragraph,
-            'address' => $faker->address,
-            'longitude' => $faker->longitude,
-            'latitude' => $faker->latitude,
-            'price' => $faker->numberBetween(10000, 1000000),
-            'size' => $faker->numberBetween(500, 5000),
-            'bedrooms' => $faker->numberBetween(1, 5),
-            'bathrooms' => $faker->numberBetween(1, 3),
-            'year_built' => $faker->date,
-            'features' => $faker->sentence,
-            'property_type' => $faker->word,
-            'status' => $faker->randomElement(['For Sale', 'For Rent']),
-            'created_by' => $faker->numberBetween(1, 10),
+            'title' => fake()->sentence,
+            'content' => fake()->text,
+            'city' => fake()->city,
+            'country' => fake()->country,
+            'address' => fake()->address,
+            'thumbnail' => fake()->imageUrl(),
+            'longitude' => fake()->longitude,
+            'latitude' => fake()->latitude,
+            'price' => fake()->numberBetween(10000, 1000000),
+            'size' => fake()->numberBetween(500, 5000),
+            'bedrooms' => fake()->numberBetween(1, 10),
+            'bathrooms' => fake()->numberBetween(1, 5),
+            'year_built' => fake()->date,
+            'features' => fake()->text,
+            'property_type' => fake()->word,
+            'status' => fake()->randomElement(['SALE', 'RENT']),
+            'modified_by' => fake()->numberBetween(1, 10),
         ];
     }
 }
