@@ -46,7 +46,7 @@
                                                                     <input value="SALE" type="hidden" name="status"
                                                                         id="selected_option">
                                                                     <span class="icon flaticon-home-1"></span>
-                                                                    <input class="form-control bgc-f7 bdrs12"
+                                                                    <input required class="form-control bgc-f7 bdrs12"
                                                                         type="text" name="address"
                                                                         placeholder="Enter title , description, address, city, or country">
                                                                 </div>
@@ -83,7 +83,7 @@
                                                                     <input type="hidden" name="status" value="RENT"
                                                                         id="selected_option">
                                                                     <span class="icon flaticon-home-1"></span>
-                                                                    <input class="form-control bgc-f7 bdrs12"
+                                                                    <input required class="form-control bgc-f7 bdrs12"
                                                                         type="text" name="address"
                                                                         placeholder="Enter title , description, address, city, or country" />
                                                                 </div>
@@ -670,6 +670,7 @@
                 <div class="row wow fadeInUp" data-wow-delay="300ms">
                     @foreach ($blogs as $item)
                         <div class="col-sm-6 col-lg-4">
+                            <a href="{{ route('single.blog', ['id' => $item->id]) }}">
                             <div class="blog-style1">
                                 <div class="blog-img">
                                     <img class="w-100" src="{{ asset($item->image) }}" alt=""></div>
@@ -679,9 +680,10 @@
                                         <span class="day">{{ $item->created_at->format('d') }}  </span>
                                     </div>
                                     <a class="tag text-single-line" href="#">{{ $item->title  }}</a>
-                                    <h6 class="title mt-1"><a href="/blog">{{ $item->content  }}</a></h6>
+                                    <h6 class="title mt-1"><a href="{{ route('single.blog', ['id' => $item->id]) }}">{{ $item->content  }}</a></h6>
                                 </div>
                             </div>
+                        </a>
                         </div>
                     @endforeach
                 </div>

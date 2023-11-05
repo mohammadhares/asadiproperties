@@ -40,15 +40,17 @@
 
                     @foreach ($result as $item)
                         <div class="col">
-                            <div class="feature-style2 mb30">
-                                <div class="feature-img">
-                                    <img class="bdrs12" src="{{ asset($item->thumbnail) }}" alt="">
+                            <a href="{{ route('single.project', ['id' => $item->id]) }}">
+                                <div class="feature-style2 mb30">
+                                    <div class="feature-img">
+                                        <img class="bdrs12" src="{{ asset($item->thumbnail) }}" alt="">
+                                    </div>
+                                    <div class="feature-content pt20">
+                                        <h6 class="title mb-1 text-single-line">{{ $item->title }}</h6>
+                                        <p class="text fz15">{{ $item->developer }}</p>
+                                    </div>
                                 </div>
-                                <div class="feature-content pt20">
-                                    <h6 class="title mb-1 text-single-line">{{ $item->title }}</h6>
-                                    <p class="text fz15">{{ $item->developer }}</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

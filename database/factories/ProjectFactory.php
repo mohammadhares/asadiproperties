@@ -20,6 +20,8 @@ class ProjectFactory extends Factory
             'title' => fake()->sentence,
             'content' => fake()->text,
             'developer' => fake()->name,
+            'city' => fake()->city,
+            'country' => fake()->country,
             'address' => fake()->address,
             'longitude' => fake()->longitude,
             'latitude' => fake()->latitude,

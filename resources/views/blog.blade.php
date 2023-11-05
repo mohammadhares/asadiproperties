@@ -34,7 +34,7 @@
         </section>
 
         <!-- Blog Section Area -->
-        <section class="our-blog pt-0">
+        <section class="our-blog pt-0 mt-zero">
             <div class="container">
                 <div class="row wow fadeInUp" data-wow-delay="300ms">
                     <div class="col-xl-12">
@@ -48,20 +48,22 @@
                                         @else
                                             @foreach ($result as $item)
                                                 <div class="col-sm-6 col-lg-4">
+                                                   <a href="{{ route('single.blog', ['id' => $item->id]) }}">
                                                     <div class="blog-style1">
                                                         <div class="blog-img"><img class="w-100"
                                                                 src="{{ asset($item->image)}}" alt=""></div>
                                                         <div class="blog-content">
                                                             <div class="date">
-                                                                <span class="month">July</span>
-                                                                <span class="day">28</span>
+                                                                <span class="month">{{ $item->created_at->format('M') }}</span>
+                                                                <span class="day">{{ $item->created_at->format('d') }}  </span>
                                                             </div>
                                                             <a class="tag" href="#">{{ $item->title }}</a>
                                                             <h6 class="title mt-1">
-                                                                <a href="page-blog-single.html">{{ $item->content}}</a>
+                                                                <a href="{{ route('single.blog', ['id' => $item->id]) }}">{{ $item->content}}</a>
                                                             </h6>
                                                         </div>
                                                     </div>
+                                                   </a>
                                                 </div>
                                             @endforeach
                                         @endif
@@ -69,8 +71,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 

@@ -43,13 +43,14 @@ class WebsiteController extends Controller
     {
         $status = $request->status;
         $address = $request->address;
-        $result = Property::where('address', 'like', '%' . $address . '%')
-            ->OrWhere('city', 'like', '%' . $address . '%')
-            ->OrWhere('country', 'like', '%' . $address . '%')
-            ->OrWhere('title', 'like', '%' . $address . '%')
-            ->OrWhere('content', 'like', '%' . $address . '%')
-            ->where('status', $status)
+        $result = Property::where('status', '=', $status)
+            ->OrWhere('address', 'like', '%' . $address . '%')
+            ->orWhere('city', 'like', '%' . $address . '%')
+            ->orWhere('country', 'like', '%' . $address . '%')
+            ->orWhere('title', 'like', '%' . $address . '%')
+            ->orWhere('content', 'like', '%' . $address . '%')
             ->paginate(12);
+
         if ($status === 'RENT') {
             return view('rent', [
                 'siteInfo' => $this->siteInfo,
@@ -67,6 +68,9 @@ class WebsiteController extends Controller
     {
         $properties = DB::table('properties')
             ->select('*')
+            ->when(request('status'), function ($query) {
+                $query->where('status', request('status'));
+            })
             ->when(request('min_price') > 0, function ($query) {
                 $query->where('price', '>=', request('min_price'));
             })
@@ -113,6 +117,24 @@ class WebsiteController extends Controller
     {
         $result = Property::findOrFail($id);
         return view('single-property', [
+            'siteInfo' => $this->siteInfo,
+            'result' => $result,
+        ]);
+    }
+
+    public function singleProject($id)
+    {
+        $result = Project::findOrFail($id);
+        return view('single-project', [
+            'siteInfo' => $this->siteInfo,
+            'result' => $result,
+        ]);
+    }
+
+    public function singleBlog($id)
+    {
+        $result = Blog::findOrFail($id);
+        return view('single-blog', [
             'siteInfo' => $this->siteInfo,
             'result' => $result,
         ]);
@@ -174,7 +196,7 @@ class WebsiteController extends Controller
         $contact->description = $request->description;
         $contact->save();
 
-        if($contact->save()){
+        if ($contact->save()) {
             return redirect()->back()->with('success', 'Your message has been sent successfully');
         }
     }

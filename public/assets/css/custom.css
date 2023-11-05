@@ -32,3 +32,46 @@
 .home-banner-style1 , .bw-100 {
     background-size: cover !important;
 }
+
+.mt-zero{
+    margin-top: -50px !important;
+}
+
+.blog-image{
+    width: 100% !important;
+    height: 600px !important;
+}
+
+/* Basic styling for the WhatsApp floating button */
+.whatsapp-floating {
+    position: fixed;
+    bottom: 36px; /* Adjust as needed */
+    left: 40px;   /* Adjust as needed */
+    background-color: #25d366; /* WhatsApp green color */
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Make sure it's above other content */
+    text-decoration: none;
+  }
+
+  /* Style the WhatsApp icon or text inside the button */
+  .whatsapp-floating .flaticon-whatsapp {
+    font-size: 24px;
+    display: block;
+    position: relative;
+    top: 2px;
+  }
+
+  /* Hover effect (optional) */
+  .whatsapp-floating:hover .whatsapp-floating .flaticon-whatsapp {
+    background-color: #128c7e; /* Darker shade of green */
+  }
+
+  .whatsapp-floating .flaticon-whatsapp:hover{
+    color: #fff;
+  }

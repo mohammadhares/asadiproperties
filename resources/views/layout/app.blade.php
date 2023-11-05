@@ -121,10 +121,9 @@
 
         @yield('content')
 
-
-
-
-
+        <a target="_blank" href="https://wa.me/{{ $siteInfo['phones'][0]['phone'] }}?text=Hello%20from%20Asadi!" class="whatsapp-floating">
+            <span class="flaticon-whatsapp"></span>
+        </a>
         <!-- Our Footer -->
         <section class="footer-style1 pt60 pb-0">
             <div class="container">

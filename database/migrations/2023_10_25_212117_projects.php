@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('developer');
+            $table->string('city');
+            $table->string('country');
             $table->string('address');
             $table->double('longitude');
             $table->double('latitude');
