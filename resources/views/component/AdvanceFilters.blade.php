@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="widget-wrapper">
-                                    <h6 class="list-title">Price Range (USD)</h6>
+                                    <h6 class="list-title">Price Range (AED)</h6>
                                     <!-- Range Slider Desktop Version -->
                                     <div class="range-slider-style modal-version" style="display:none;">
                                         <div class="range-wrapper">

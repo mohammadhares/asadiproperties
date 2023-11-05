@@ -37,7 +37,7 @@
                                 href="https://wa.me/{{ $siteInfo['phones'][0]['phone'] }}?text=Hello%20from%20Asadi!"><span
                                     class="flaticon-whatsapp"></span></a>
                         </div>
-                        <h3 class="price mb-0">$ {{ $result->price }}</h3>
+                        <h3 class="price mb-0">AED {{ $result->price }}</h3>
                         <p class="text space fz15">{{ $result->size }}/ft</p>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="pd-list">
                                     <p class="text mb10">PR {{ $result->id }}</p>
-                                    <p class="text mb10">$ {{ $result->price }}</p>
+                                    <p class="text mb10">AED {{ $result->price }}</p>
                                     <p class="text mb10">{{ $result->size }} Sq Ft</p>
                                     <p class="text mb10">{{ $result->bathrooms }}</p>
                                     <p class="text mb-0">{{ $result->bedrooms }}</p>

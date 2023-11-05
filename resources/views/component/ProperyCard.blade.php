@@ -5,7 +5,7 @@
             <div class="list-thumb">
                 <img class="w-100 h-400" src="{{ asset($item->thumbnail) }}" alt="">
                 <div class="list-tag fz12"><span class="flaticon-electricity me-2"></span>FEATURED</div>
-                <div class="list-price">$ {{ $item->price }} / <span>mo</span></div>
+                <div class="list-price">AED {{ $item->price }} / <span>mo</span></div>
             </div>
             <div class="list-content">
                 <h6 class="list-title text-single-line">

@@ -151,7 +151,7 @@
                                                 <div class="list-tag fz12">
                                                     <span class="flaticon-electricity me-2"></span>FEATURED
                                                 </div>
-                                                <div class="list-price">$ {{ $item->price }}
+                                                <div class="list-price">AED {{ $item->price }}
                                                     @if ($item->status == 'RENT')
                                                         / <span>mo</span>
                                                     @endif
@@ -368,7 +368,7 @@
                                                                 <div class="list-tag fz12">
                                                                     <span class="flaticon-electricity me-2"></span>FEATURED
                                                                 </div>
-                                                                <div class="list-price">$ {{ $item->price }}
+                                                                <div class="list-price">AED {{ $item->price }}
                                                                     @if ($item->status == 'RENT')
                                                                         / <span>mo</span>
                                                                     @endif
@@ -435,7 +435,7 @@
                                                                 <div class="list-tag fz12">
                                                                     <span class="flaticon-electricity me-2"></span>FEATURED
                                                                 </div>
-                                                                <div class="list-price">$ {{ $item->price }}
+                                                                <div class="list-price">AED {{ $item->price }}
                                                                     @if ($item->status == 'RENT')
                                                                         / <span>mo</span>
                                                                     @endif
