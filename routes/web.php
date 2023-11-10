@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
@@ -36,3 +37,11 @@ Route::GET('/blog/{id}', [WebsiteController::class, 'singleBlog'])->name('single
 Route::GET('/search', [WebsiteController::class, 'search'])->name('search');
 Route::GET('/advance-search', [WebsiteController::class, 'advanceSearch'])->name('advance.search');
 Route::POST('/contact', [WebsiteController::class, 'storeContact'])->name('store.contact');
+
+
+Route::prefix('dashboard')->group(function () {
+    Route::GET('/property', [PropertyController::class, 'index'])->name('property.list');
+    Route::POST('/property/create', [PropertyController::class, 'create'])->name('property.create');
+    Route::PATCH('/property/update/{id}', [PropertyController::class, 'update'])->name('property.update');
+    Route::DELETE('/property/delete/{id}', [PropertyController::class, 'delete'])->name('property.delete');
+});
