@@ -121,7 +121,7 @@
             </div>
         </section>
         <!-- Explore Apartment -->
-        <section class="bgc-f7">
+        <section class="">
             <div class="container">
                 <div class="row align-items-center wow fadeInUp" data-wow-delay="00ms">
                     <div class="col-lg-9">

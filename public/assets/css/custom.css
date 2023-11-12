@@ -13,15 +13,22 @@
 
 .menus-active span {
     color: #f9f9f9 !important;
-}feBlend
-
-.list-title , .text-single-line {
+}
+feBlend .list-title,
+.text-single-line {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.tst_content{
+.text-five-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 5;
+}
+
+.tst_content {
     height: 200px !important;
 }
 
@@ -29,15 +36,16 @@
     height: 300px;
 }
 
-.home-banner-style1 , .bw-100 {
+.home-banner-style1,
+.bw-100 {
     background-size: cover !important;
 }
 
-.mt-zero{
+.mt-zero {
     margin-top: -50px !important;
 }
 
-.blog-image{
+.blog-image {
     width: 100% !important;
     height: 600px !important;
 }
@@ -46,7 +54,7 @@
 .whatsapp-floating {
     position: fixed;
     bottom: 36px; /* Adjust as needed */
-    left: 40px;   /* Adjust as needed */
+    left: 40px; /* Adjust as needed */
     background-color: #25d366; /* WhatsApp green color */
     color: #fff;
     border-radius: 50%;
@@ -57,21 +65,135 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000; /* Make sure it's above other content */
     text-decoration: none;
-  }
+}
 
-  /* Style the WhatsApp icon or text inside the button */
-  .whatsapp-floating .flaticon-whatsapp {
+/* Style the WhatsApp icon or text inside the button */
+.whatsapp-floating .flaticon-whatsapp {
     font-size: 24px;
     display: block;
     position: relative;
     top: 2px;
-  }
+}
 
-  /* Hover effect (optional) */
-  .whatsapp-floating:hover .whatsapp-floating .flaticon-whatsapp {
+/* Hover effect (optional) */
+.whatsapp-floating:hover .whatsapp-floating .flaticon-whatsapp {
     background-color: #128c7e; /* Darker shade of green */
-  }
+}
 
-  .whatsapp-floating .flaticon-whatsapp:hover{
+.whatsapp-floating .flaticon-whatsapp:hover {
     color: #fff;
-  }
+}
+
+/* Dark Mode */
+:root {
+    --nav-dark: #050718;
+    --main-bg: #071015;
+    --fontColor: #f9f9f9;
+    --card: #212d40;
+}
+
+.dark-mode,
+.dark-mode .inner-banner-style1 .tab-content,
+.dark-mode .inner-banner-style1 .nav-tabs,
+.dark-mode .inner-banner-style1 .advance-search-btn,
+.dark-mode .dropdown-menu,
+.dark-mode .bgc-f7,
+.dark-mode .bgc-white
+{
+    background-color: var(--main-bg) !important;
+    color: var(--fontColor) !important;
+}
+
+.dark-mode .far {
+    color: #f9f9f9 !important;
+}
+
+.dark-mode .dropdown-menu input{
+    color: #f9f9f9 !important;
+}
+
+.dark-mode .dropdown-menu ul li .dropdown-item:hover, .dark-mode .no-results{
+    background-color: #000 !important;
+    color: #f9f9f9 !important;
+}
+
+.dark-mode .tab-content input{
+    background-color: #9999999b !important;
+    color: var(--fontColor) !important;
+}
+
+.dark-mode .modal-content input, .dark-mode .form-style1 input, .dark-mode .form-style1 textarea{
+    background-color: transparent  !important;
+}
+
+.dark-mode .home8-contact-form input,
+.dark-mode .home8-contact-form textarea ,
+.dark-mode .home8-contact-form{
+    background-color: #10101b !important;
+    color: #f9f9f9 !important;
+}
+
+.dark-mode header.slideInDown, .dark-mode .date, .dark-mode .mm-panel
+{
+    background-color: var(--nav-dark) !important;
+    color: var(--fontColor) !important;
+}
+
+.dark-mode .mobile-menu .header{
+    background-color: rgba(183, 183, 222, 0.728) !important;
+    color: #f9f9f9 !important;
+}
+
+.dark-mode .listing-style1,
+.dark-mode .testimonial-style1,
+.dark-mode .cta-banner,
+.dark-mode .blog-style1,
+.dark-mode .modal-content,
+.dark-mode .list-icon
+{
+    background-color: var(--card) !important;
+    color: var(--fontColor) !important;
+}
+
+.dark-mode .blog-content
+{
+    min-height: 200px;
+    padding: 10px;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode div,
+.dark-mode a,
+.dark-mode ul li,
+.dark-mode span,
+.dark-mode .home8-contact-form label,
+.dark-mode .form-style1 label
+{
+    color: var(--fontColor) !important;
+}
+
+.owl-nav .far{
+    color: #000 !important;
+}
+.listing-style1 .list-meta2 a, .dark-mode .ud-btn  {
+    background-color: #161b2e !important;
+    color: var(--fontColor) !important;
+}
+
+.dark-mode .nav-link.active{
+    background-color: #EE4C34 !important;
+    color: #f9f9f9 !important;
+}
+
+.dark-mode .page-item,
+.dark-mode .page-item span,
+.dark-mode .list-price{
+    background-color: #161b2e !important;
+    color: var(--fontColor) !important;
+}

@@ -31,7 +31,7 @@
     <link href="assets/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
 </head>
 
-<body>
+<body class="dark-mode">
     <div class="wrapper ovh">
         {{-- <div class="preloader"></div> --}}
 

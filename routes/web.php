@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\WebsiteController;
@@ -37,10 +39,13 @@ Route::GET('/blog/{id}', [WebsiteController::class, 'singleBlog'])->name('single
 Route::GET('/search', [WebsiteController::class, 'search'])->name('search');
 Route::GET('/advance-search', [WebsiteController::class, 'advanceSearch'])->name('advance.search');
 Route::POST('/contact', [WebsiteController::class, 'storeContact'])->name('store.contact');
-
+Route::GET('/dashboard/login', [AuthController::class, 'index'])->name('login.view');
+Route::POST('/auth/login', [AuthController::class, 'login'])->name('login.auth');
 
 Route::prefix('dashboard')->group(function () {
-    Route::GET('/property', [PropertyController::class, 'index'])->name('property.list');
+    Route::GET('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+    Route::GET('/home', [HomeController::class, 'index'])->name('home.view');
     Route::POST('/property/create', [PropertyController::class, 'create'])->name('property.create');
     Route::PATCH('/property/update/{id}', [PropertyController::class, 'update'])->name('property.update');
     Route::DELETE('/property/delete/{id}', [PropertyController::class, 'delete'])->name('property.delete');
