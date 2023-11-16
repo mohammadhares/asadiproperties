@@ -113,7 +113,6 @@
                     </li>
                     <li> <a href='/about'>About as</a>
                     </li>
-                <!-- Only for Mobile View -->
               </ul>
             </nav>
           </div>

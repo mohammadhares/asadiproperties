@@ -197,3 +197,16 @@ feBlend .list-title,
     background-color: #161b2e !important;
     color: var(--fontColor) !important;
 }
+
+
+.custom-red-btn{
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+
+#map{
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}

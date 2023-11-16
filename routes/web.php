@@ -1,9 +1,14 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SubscribeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,7 +51,33 @@ Route::prefix('dashboard')->group(function () {
     Route::GET('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
     Route::GET('/home', [HomeController::class, 'index'])->name('home.view');
+
+    Route::GET('/property', [PropertyController::class, 'index'])->name('property.view');
+    Route::GET('/add/property', [PropertyController::class, 'add'])->name('property.add');
+    Route::GET('/edit/property/{id}', [PropertyController::class, 'edit'])->name('property.edit');
     Route::POST('/property/create', [PropertyController::class, 'create'])->name('property.create');
-    Route::PATCH('/property/update/{id}', [PropertyController::class, 'update'])->name('property.update');
-    Route::DELETE('/property/delete/{id}', [PropertyController::class, 'delete'])->name('property.delete');
+    Route::PUT('/property/update/{id}', [PropertyController::class, 'update'])->name('property.update');
+    Route::POST('/property/update/address/{id}', [PropertyController::class, 'updateAddress'])->name('update.address');
+    Route::GET('/property/delete/{id}', [PropertyController::class, 'delete'])->name('property.delete');
+    Route::POST('/upload/image/{id}/{type}', [PropertyController::class, 'uplaodImage'])->name('upload.image');
+    Route::POST('/feature/store/{id}/{type}', [PropertyController::class, 'addFeature'])->name('feature.add');
+    Route::GET('/property/gallary/{id}', [PropertyController::class, 'gallary'])->name('property.gallary');
+    Route::GET('/property/gallary/delete/{id}', [PropertyController::class, 'deleteGallary'])->name('gallary.dete');
+
+
+
+    Route::GET('/project', [ProjectController::class, 'index'])->name('project.view');
+
+    Route::GET('/blog', [BlogController::class, 'index'])->name('blog.view');
+
+    Route::GET('/contact', [ContactController::class, 'index'])->name('contact.view');
+
+    Route::GET('/subscribe', [SubscribeController::class, 'index'])->name('subscribe.view');
+
+    Route::GET('/users', [UserController::class, 'index'])->name('users.view');
+
+    Route::GET('/profile', [UserController::class, 'profile'])->name('profile.view');
+
+    Route::GET('/settings', [SettingController::class, 'index'])->name('setting.view');
+
 });

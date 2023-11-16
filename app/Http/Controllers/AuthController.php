@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return view('Dashbord.login');
+        return view('dashboard.login');
     }
 
     public function login(Request $request)
@@ -28,6 +28,6 @@ class AuthController extends Controller
 
     public function logout()
     {
-        return view('Dashbord.login');
+        return view('dashboard.login');
     }
 }
