@@ -1,14 +1,13 @@
 @extends('layout.dashboard')
 @section('dashboard')
     <div class="dashboard__main pl0-md">
-        <div class="dashboard__content bgc-f7">
+        <div class="dashboard__content bgc-f7 content_section">
             <div class="row align-items-center pb40">
-                <div class="col-xxl-3">
-                    <div class="dashboard_title_area">
-                        <h2>My Profile</h2>
-                    </div>
-                </div>
                 <div class="row">
+                    <div class="col-lg-12">
+                        @include('component.messages.success')
+                        @include('component.messages.errors')
+                    </div>
                     <div class="col-xl-12">
                         <div
                             class="ps-widget bgc-white bdrs12 default-box-shadow2 pt30 mb30 overflow-hidden position-relative">
@@ -17,7 +16,7 @@
                                     <div class="nav nav-tabs" id="nav-tab2" role="tablist">
                                         <button class="nav-link active fw600 ms-3" id="nav-item1-tab" data-bs-toggle="tab"
                                             data-bs-target="#nav-item1" type="button" role="tab"
-                                            aria-controls="nav-item1" aria-selected="true">Description</button>
+                                            aria-controls="nav-item1" aria-selected="true">My Profile</button>
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-tabContent">

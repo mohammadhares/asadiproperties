@@ -82,10 +82,6 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        if ($user->delete()) {
-            return redirect()->back()->with('success', 'User deleted successfully');
-        } else {
-            return redirect()->back()->with('error', 'Something went wrong');
-        }
+        return redirect()->back()->with('success', 'User deleted successfully');
     }
 }

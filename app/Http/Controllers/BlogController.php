@@ -60,10 +60,6 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $blog->delete();
-        if ($blog->delete()) {
-            return redirect()->back()->with('success', 'Blog deleted successfully');
-        } else {
-            return redirect()->back()->with('error', 'Something went wrong');
-        }
+        return redirect()->back()->with('success', 'Blog deleted successfully');
     }
 }

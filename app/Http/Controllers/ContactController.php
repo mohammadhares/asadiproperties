@@ -19,10 +19,6 @@ class ContactController extends Controller
     {
         $contact = Contact::findOrFail($id);
         $contact->delete();
-        if ($contact->delete()) {
-            return redirect()->back()->with('success', 'Contact deleted successfully');
-        } else {
-            return redirect()->back()->with('error', 'Something went wrong');
-        }
+        return redirect()->back()->with('success', 'Contact deleted successfully');
     }
 }

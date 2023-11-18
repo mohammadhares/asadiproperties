@@ -1,7 +1,7 @@
 @extends('layout.dashboard')
 @section('dashboard')
 <div class="dashboard__main pl0-md">
-    <div class="dashboard__content bgc-f7">
+    <div class="dashboard__content bgc-f7 content_section">
         <div class="row align-items-center pb40">
             <div class="col-xxl-3">
                 <div class="dashboard_title_area">
@@ -10,9 +10,14 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-12">
+                    @include('component.messages.success')
+                    @include('component.messages.errors')
+                </div>
                 <div class="col-xl-12">
                     <div class="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                         <div class="packages_table table-responsive">
+                            @if (count($result) > 0)
                             <table class="table-style3 table at-savesearch">
                                 <thead class="t-head">
                                     <tr>
@@ -43,6 +48,11 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            @else
+                            <div class="col-lg-12 text-center">
+                                <p><i>There is no subscriber.</i></p>
+                            </div>
+                            @endif
                         </div>
                         @if (count($result) > 12)
                         @include('pagination', ['paginator' => $result])

@@ -15,21 +15,20 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->string('city');
-            $table->string('country');
-            $table->string('address');
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
+            $table->string('address')->nullable();
             $table->string('thumbnail');
-            $table->double('longitude');
-            $table->double('latitude');
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
             $table->integer('price');
             $table->integer('size');
             $table->integer('bedrooms');
             $table->integer('bathrooms');
-            $table->date('year_built');
-            $table->text('features');
+            $table->date('year_built')->nullable();
             $table->string('property_type');
             $table->string('status');
-            $table->integer('modified_by');
+            $table->string('modified_by');
             $table->timestamps();
         });
     }

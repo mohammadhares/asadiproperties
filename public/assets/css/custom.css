@@ -210,3 +210,15 @@ feBlend .list-title,
     height: 500px;
     border-radius: 10px;
 }
+
+
+.content_section{
+    border: 1px solid #161b2e6d;
+    min-height: 90vh;
+}
+
+
+.dashboard_search_meta{
+    position: relative;
+    right: 20px;
+}

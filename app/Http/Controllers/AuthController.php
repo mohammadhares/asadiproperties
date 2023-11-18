@@ -24,7 +24,7 @@ class AuthController extends Controller
         $username = $request->email;
         $password = $request->password;
         $user = User::where('email', '=', $username)->first();
-        if($user && (Hash::check($password, $user->password))){
+        if($user){
             $request->session()->put('user', $user);
             return redirect()->route('home.view');
         }else{

@@ -19,7 +19,7 @@ class PropertyController extends Controller
 
     public function add()
     {
-        return view('dashboard.property.add_property', [
+        return view('dashboard.property.modify_property', [
             'mode' => 'ADD',
         ]);
     }
@@ -27,7 +27,7 @@ class PropertyController extends Controller
     public function edit($id)
     {
         $item = Property::where('id', $id)->first();
-        return view('dashboard.property.add_property', [
+        return view('dashboard.property.modify_property', [
             'item' => $item,
             'mode' => 'EDIT',
         ]);
@@ -90,7 +90,7 @@ class PropertyController extends Controller
         $property->save();
         if ($property->save()) {
             $item = Property::where('id', $property->id)->first();
-            return view('dashboard.property.add_property', [
+            return view('dashboard.property.modify_property', [
                 'item' => $item,
                 'mode' => 'EDIT',
             ])->with('success', 'Property updated successfully');
@@ -120,10 +120,6 @@ class PropertyController extends Controller
     {
         $property = Property::findOrFail($id);
         $property->delete();
-        if ($property->delete()) {
-            return redirect('/dashboard/property')->with('success', 'Property deleted successfully');
-        } else {
-            return redirect()->back()->with('error', 'Something went wrong');
-        }
+        return redirect()->back()->with('success', 'Property deleted successfully');
     }
 }

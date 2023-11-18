@@ -7,6 +7,10 @@
         <div class="dashboard__content bgc-f7">
             <div class="row align-items-center pb40">
                 <div class="row">
+                    <div class="col-lg-12">
+                        @include('component.messages.success')
+                        @include('component.messages.errors')
+                    </div>
                     <div class="col-xl-12">
                         <div
                             class="ps-widget bgc-white bdrs12 default-box-shadow2 pt30 mb30 overflow-hidden position-relative">
@@ -44,7 +48,7 @@
                                                       <div class="col-sm-12">
                                                         <div class="mb20">
                                                           <label class="heading-color ff-heading fw600 mb10">Term and Condation</label>
-                                                          <textarea cols="30" rows="5" name="condation" placeholder="Please write Term and Condation for website.">{{ $setting->condation }}</textarea>
+                                                          <textarea cols="30" rows="5" name="condations" placeholder="Please write Term and Condation for website.">{{ $setting->condations }}</textarea>
                                                         </div>
                                                       </div>
 
@@ -139,13 +143,13 @@
                                                       <div class="col-sm-6 col-xl-4">
                                                         <div class="mb30">
                                                           <label class="heading-color ff-heading fw600 mb10">Latitude</label>
-                                                          <input id="latitude" type="number"  value="{{ $setting->latitude }}"  class="form-control" placeholder="">
+                                                          <input id="latitude" name="latitude" type="text" readonly  value="{{ $setting->latitude }}"  class="form-control" placeholder="">
                                                         </div>
                                                       </div>
                                                       <div class="col-sm-6 col-xl-4">
                                                         <div class="mb30">
                                                           <label class="heading-color ff-heading fw600 mb10">Longitude</label>
-                                                          <input id="longitude" type="number"  value="{{ $setting->longitude }}"  class="form-control" placeholder="">
+                                                          <input id="longitude" name="longitude" type="text" readonly  value="{{ $setting->longitude }}"  class="form-control" placeholder="">
                                                         </div>
                                                       </div>
 
@@ -172,10 +176,11 @@
         <script>
                let mapOptions = {
                 center:[ $('#latitude').val() , $('#longitude').val()],
-                zoom:10
+                zoom:3,
             }
 
             let map = new L.map('map' , mapOptions);
+            L.marker([$('#latitude').val() ,$('#latitude').val()]).addTo(map);
 
             let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
             map.addLayer(layer);

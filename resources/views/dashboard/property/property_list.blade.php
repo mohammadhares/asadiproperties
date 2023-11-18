@@ -1,7 +1,7 @@
 @extends('layout.dashboard')
 @section('dashboard')
 <div class="dashboard__main pl0-md">
-    <div class="dashboard__content bgc-f7">
+    <div class="dashboard__content bgc-f7 content_section">
         <div class="row align-items-center pb40">
             <div class="col-xxl-3">
                 <div class="dashboard_title_area">
@@ -15,15 +15,20 @@
                         <a href="{{ route('property.add') }}" class="ud-btn btn-thm"><i
                                 class="fal fa-arrow-right-long"></i>
                             Add New Property
-</a>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-12">
+                    @include('component.messages.success')
+                    @include('component.messages.errors')
+                </div>
                 <div class="col-xl-12">
                     <div
                         class="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                         <div class="packages_table table-responsive">
+                            @if (count($result) > 0)
                             <table class="table-style3 table at-savesearch">
                                 <thead class="t-head">
                                     <tr>
@@ -75,7 +80,9 @@
                                                 <a href="{{ route('property.edit', ['id' => $item->id ]) }}" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                                     <span class="fas fa-pen fa"></span>
                                                 </a>
-                                                <a href="{{ route('property.delete', ['id' => $item->id]) }}" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                                                <a href="{{ route('property.delete', ['id' => $item->id]) }}"
+                                                    onclick="deleteMessage('Are you sure to delete property?')"
+                                                    class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                                                     <span class="flaticon-bin"></span>
                                                 </a>
                                             </div>
@@ -84,8 +91,13 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            @else
+                            <div class="col-lg-12 text-center">
+                                <p><i>There is no property yet.</i></p>
+                            </div>
+                            @endif
                         </div>
-                        @if (count($result) > 0)
+                        @if (count($result) > 12)
                         @include('pagination', ['paginator' => $result])
                         @endif
                     </div>

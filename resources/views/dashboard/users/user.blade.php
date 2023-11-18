@@ -1,7 +1,7 @@
 @extends('layout.dashboard')
 @section('dashboard')
 <div class="dashboard__main pl0-md">
-    <div class="dashboard__content bgc-f7">
+    <div class="dashboard__content bgc-f7 content_section">
         <div class="row align-items-center pb40">
             <div class="col-xxl-3">
                 <div class="dashboard_title_area">
@@ -116,6 +116,10 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-12">
+                    @include('component.messages.success')
+                    @include('component.messages.errors')
+                </div>
                 <div class="col-xl-12">
                     <div
                         class="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
@@ -286,11 +290,13 @@
                                                     </div>
                                                 </div>
 
+                                                @if(count($result) > 1)
                                                 <a href="{{ route('user.delete', ['id' => $item->id]) }}"
                                                     onclick="deleteMessage('Are you sure to delete user')" class="icon"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Delete"><span class="flaticon-bin"></span>
                                                 </a>
+                                                @endif
                                             </div>
                                         </td>
                                     </tr>
