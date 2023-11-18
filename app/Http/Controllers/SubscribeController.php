@@ -23,4 +23,23 @@ class SubscribeController extends Controller
             return redirect()->back()->with('error', 'Sorry, Something went wrong');
         }
     }
+
+        public function index()
+        {
+            $contact = Subscribe::OrderBy('id', 'desc')->paginate(12);
+            return view('dashboard.subscribe.subscribe', [
+                'result' => $contact
+            ]);
+        }
+
+        public function delete($id)
+        {
+            $contact = Subscribe::findOrFail($id);
+            $contact->delete();
+            if ($contact->delete()) {
+                return redirect()->back()->with('success', 'email deleted successfully');
+            } else {
+                return redirect()->back()->with('error', 'Something went wrong');
+            }
+        }
 }

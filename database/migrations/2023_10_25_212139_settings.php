@@ -16,9 +16,15 @@ return new class extends Migration
             $table->text('about');
             $table->text('privacy');
             $table->text('condations');
-            $table->json('phones');
-            $table->json('emails');
-            $table->json('socialmedias');
+            $table->string('phone_number');
+            $table->string('whatsapp_number');
+            $table->string('primary_email');
+            $table->string('secondary_email');
+            $table->string('facebook');
+            $table->string('instagram');
+            $table->string('twitter');
+            $table->string('linkedin');
+            $table->string('youtube');
             $table->string('address');
             $table->string('latitude');
             $table->string('longitude');

@@ -18,9 +18,11 @@
                       <nav>
                         <div class="nav nav-tabs" id="nav-tab2" role="tablist">
                           <button class="nav-link active fw600 ms-3" id="nav-item1-tab" data-bs-toggle="tab" data-bs-target="#nav-item1" type="button" role="tab" aria-controls="nav-item1" aria-selected="true">Property</button>
-                          <button class="nav-link fw600" id="nav-item2-tab" data-bs-toggle="tab" data-bs-target="#nav-item2" type="button" role="tab" aria-controls="nav-item2" aria-selected="false">Media</button>
-                          <button class="nav-link fw600" id="nav-item3-tab" data-bs-toggle="tab" data-bs-target="#nav-item3" type="button" role="tab" aria-controls="nav-item3" aria-selected="false">Location</button>
-                          <button class="nav-link fw600" id="nav-item4-tab" data-bs-toggle="tab" data-bs-target="#nav-item4" type="button" role="tab" aria-controls="nav-item4" aria-selected="false">Features</button>
+                          @if($mode === 'EDIT')
+                            <button class="nav-link fw600" id="nav-item2-tab" data-bs-toggle="tab" data-bs-target="#nav-item2" type="button" role="tab" aria-controls="nav-item2" aria-selected="false">Media</button>
+                            <button class="nav-link fw600" id="nav-item3-tab" data-bs-toggle="tab" data-bs-target="#nav-item3" type="button" role="tab" aria-controls="nav-item3" aria-selected="false">Address</button>
+                            <button class="nav-link fw600" id="nav-item4-tab" data-bs-toggle="tab" data-bs-target="#nav-item4" type="button" role="tab" aria-controls="nav-item4" aria-selected="false">Features</button>
+                          @endif
                         </div>
                       </nav>
                       <div class="tab-content" id="nav-tabContent">
@@ -134,7 +136,7 @@
                                     id="imageUploadForm"
                                     enctype="multipart/form-data">
                                     <input id="image" required name="image" type="file" class="ud-btn btn-white" style="cursor: pointer" />
-                                    <input type="button" onclick="uploadImage({{ $item->id }})" class="ud-btn btn-red custom-red-btn"  value="Upload">
+                                    <input type="button" @if($mode === 'EDIT')  onclick="uploadImage({{ $item->id }})" @endif class="ud-btn btn-red custom-red-btn"  value="Upload">
                                 </form>
                               </div>
                             </div>
@@ -190,7 +192,7 @@
                                     <div class="d-sm-flex text-right" style="!important; justify-content: right;">
                                       <button
                                             type="button"
-                                            onclick="updateAddress({{ $item->id}})"
+                                            @if($mode === 'EDIT') onclick="updateAddress({{ $item->id}})" @endif
                                             style="margin-left: 20px" class="ud-btn btn-dark">
                                             Save Changes
                                         </button>
@@ -204,19 +206,18 @@
                           <div class="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
                             <div class="row">
                                 <div class="col-sm-6 col-xl-12">
-                                    <div class="mb30 flex">
+                                    <div class="mb30 flex" >
                                       <label class="heading-color ff-heading fw600 mb10">Feature</label>
-                                      <input id="feature" type="text" class="form-control" placeholder="Ex. Pool">
-                                      <input onclick="addFeature({{ $item->id }})" type="button" value="Add">
+                                      <div style="display: flex;">
+                                      <input style="width: 300px; margin-right: 10px" id="feature" type="text" class="form-control" placeholder="Ex. Pool">
+                                      <input class="ud-btn btn-dark " @if($mode === 'EDIT')  onclick="addFeature({{ $item->id }})" @endif type="button" value="Add New">
+                                    </div>
+
                                     </div>
                                   </div>
                                 <div class="col-sm-6 col-lg-3 col-xxl-2">
-                                  <div class="checkbox-style1">
-                                    <label class="custom_checkbox">Attic
-                                      <input type="checkbox">
-                                      <span class="checkmark"></span>
-                                    </label>
-                                  </div>
+                                    <div class="feature_list" id="data-feature">
+                                    </div>
                                 </div>
                               </div>
                           </div>
@@ -230,12 +231,11 @@
     </div>
     @section('scripts')
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    @if($mode === 'EDIT')
     <script>
-        function updateHtmlWithData(data) {
+            function displayGallary(data) {
                 let container = $('#data-container');
                 container.empty();
-                console.log('gal', data);
-                console.log(container);
                 data.forEach(gall => {
                     container.append(`
                         <div class="profile-img position-relative overflow-hidden bdrs12 ml20 ml0-sm">
@@ -246,13 +246,38 @@
                 });
             }
 
-            function fetchData(id) {
+            function displayFeature(data) {
+                let container = $('#data-feature');
+                container.empty();
+                data.forEach(item => {
+                    container.append(`
+                        <div class="flex">
+                            <span onclick="removeFeature(${item?.id})" style="cursor: pointer" class="fas fa-trash-can"></span>
+                            <span style="margin-left: 10px">${item?.feature}</span>
+                        </div>
+                    `);
+                });
+            }
+
+            function getGallary(id) {
                 $.ajax({
                     type: 'GET',
-                    url: `/dashboard/property/gallary/${id}`,
+                    url: `/dashboard/gallary/list/${id}`,
                     success: function(response) {
-                        console.log(response.gallary);
-                        updateHtmlWithData(response.gallary);
+                        displayGallary(response?.gallary);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+
+            function getFeatures(id) {
+                $.ajax({
+                    type: 'GET',
+                    url: `/dashboard/feature/list/${id}`,
+                    success: function(response) {
+                        displayFeature(response.feature);
                     },
                     error: function(error) {
                         console.log(error);
@@ -264,13 +289,12 @@
                 var formData = new FormData($('#imageUploadForm')[0]);
                 $.ajax({
                     type: 'POST',
-                    url: `/dashboard/upload/image/${propertyId}/property`,
+                    url: `/dashboard/gallary/upload/${propertyId}/property`,
                     data: formData,
                     contentType: false,
                     processData: false,
                     success: function(response) {
-                        console.log(response);
-                        fetchData('{{ $item->id }}');
+                        getGallary('{{ $item->id }}');
                     },
                     error: function(error) {
                         console.log(error);
@@ -284,10 +308,26 @@
                 if(ans){
                     $.ajax({
                         type: 'GET',
-                        url: `/dashboard/property/gallary/delete/${id}`,
+                        url: `/dashboard/gallary/delete/${id}`,
                         success: function(response) {
                             console.log(response);
-                            fetchData('{{ $item->id }}');
+                            getGallary('{{ $item->id }}');
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                    });
+                }
+            }
+
+            function removeFeature(id) {
+                const ans = confirm('Are you sure to remove Feature?');
+                if(ans){
+                    $.ajax({
+                        type: 'GET',
+                        url: `/dashboard/feature/delete/${id}`,
+                        success: function(response) {
+                            getFeatures('{{ $item->id }}');
                         },
                         error: function(error) {
                             console.log(error);
@@ -303,7 +343,7 @@
                 formData.append('city', $('#city').val())
                 formData.append('country', $('#country').val())
                 formData.append('latitude', $('#latitude').val())
-                formData.append('longitude', )
+                formData.append('longitude', $('#longitude').val() )
                 $.ajax({
                     type: 'POST',
                     url: `/dashboard/property/update/address/${id}`,
@@ -329,7 +369,7 @@
                     contentType: false,
                     processData: false,
                     success: function(response) {
-                        console.log(response);
+                        getFeatures('{{ $item->id }}');
                     },
                     error: function(error) {
                         console.log(error);
@@ -339,7 +379,8 @@
 
 
 
-            fetchData('{{ $item->id }}');
+            getGallary('{{ $item->id }}');
+            getFeatures('{{ $item->id }}');
 
             let mapOptions = {
                 center:[ $('#latitude').val() , $('#longitude').val()],
@@ -367,6 +408,7 @@
             })
 
     </script>
+    @endif
     @endsection
 
 @endsection

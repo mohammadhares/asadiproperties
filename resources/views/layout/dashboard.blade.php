@@ -126,13 +126,13 @@
                 <div class="dashboard__sidebar d-none d-lg-block">
                     <div class="dashboard_sidebar_list">
                         <div class="sidebar_list_item">
-                            <a href="{{ route('home.view') }}" class="items-center -is-active">
+                            <a href="{{ route('home.view') }}" class="items-center {{ request()->is('dashboard/home') ? '-is-active' : '' }} ">
                                 <i class="flaticon-discovery mr15"></i>
                                 Dashboard
                             </a>
                         </div>
                         <div class="sidebar_list_item ">
-                            <a href="{{ route('property.view') }}" class="items-center">
+                            <a href="{{ route('property.view') }}" class="items-center {{ request()->is('dashboard/property/*') ? '-is-active' : '' }} ">
                                 <i class="flaticon-home mr15"></i>
                                 Property
                             </a>
@@ -144,37 +144,46 @@
                             </a>
                         </div>
                         <div class="sidebar_list_item ">
-                            <a href="{{ route('blog.view') }}" class="items-center">
+                            <a href="{{ route('blog.view') }}" class="items-center {{ request()->is('dashboard/blog/*') ? '-is-active' : '' }} ">
                                 <i class="flaticon-review  mr15"></i>
                                 Blog
                             </a>
                         </div>
                         <div class="sidebar_list_item ">
-                            <a href="{{ route('users.view') }}" class="items-center">
-                                <i class="flaticon-user mr15"></i>
-                                Users
-                            </a>
-                        </div>
-                        <div class="sidebar_list_item ">
-                            <a href="{{ route('contact.view') }}" class="items-center">
+                            <a href="{{ route('contact.view') }}" class="items-center {{ request()->is('dashboard/contact') ? '-is-active' : '' }} ">
                                 <i class="flaticon-bell mr15"></i>
                                 Contact
                             </a>
                         </div>
                         <div class="sidebar_list_item ">
-                            <a href="{{ route('contact.view') }}" class="items-center">
+                            <a href="{{ route('subscribe.view') }}" class="items-center {{ request()->is('dashboard/subscribe') ? '-is-active' : '' }}" >
                                 <i class="flaticon-email mr15"></i>
                                 Subscribe
                             </a>
                         </div>
+
                         <div class="sidebar_list_item ">
-                            <a href="{{ route('contact.view') }}" class="items-center">
+                            <a href="{{ route('setting.view') }}" class="items-center {{ request()->is('dashboard/settings') ? '-is-active' : '' }}">
+                                <i class="flaticon-email mr15"></i>
+                                Settings
+                            </a>
+                        </div>
+
+                        <div class="sidebar_list_item ">
+                            <a href="{{ route('users.view') }}" class="items-center {{ request()->is('dashboard/user/*') ? '-is-active' : '' }}">
+                                <i class="flaticon-user mr15"></i>
+                                Users
+                            </a>
+                        </div>
+
+                        <div class="sidebar_list_item ">
+                            <a href="{{ route('profile.view') }}" class="items-center {{ request()->is('dashboard/profile') ? '-is-active' : '' }}">
                                 <i class="flaticon-user mr15"></i>
                                 My Profile
                             </a>
                         </div>
                         <div class="sidebar_list_item ">
-                            <a href="{{ route('contact.view') }}" class="items-center">
+                            <a href="{{ route('auth.logout') }}" class="items-center">
                                 <i class="flaticon-logout mr15"></i>
                                 Logout
                             </a>
@@ -198,6 +207,7 @@
     <script src="{{ asset('assets/js/jquery-scrolltofixed-min.js') }}"></script>
     <script src="{{ asset('assets/js/dashboard-script.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
     @yield('scripts')
 </body>
 

@@ -10,6 +10,8 @@
         });
     }
 
+
+
     /* ----- Navbar Scroll To Fixed ----- */
     function navbarScrollfixed() {
         $('.navbar-scrolltofixed').scrollToFixed();

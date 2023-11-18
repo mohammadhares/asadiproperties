@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -15,12 +16,17 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
         $username = $request->email;
         $password = $request->password;
         $user = User::where('email', '=', $username)->first();
         if($user && (Hash::check($password, $user->password))){
-            session(['user' => $user]);
-            return redirect('dashboard/home');
+            $request->session()->put('user', $user);
+            return redirect()->route('home.view');
         }else{
             return redirect()->back()->with('error', 'Incorrect Username or Password');
         }
@@ -28,6 +34,7 @@ class AuthController extends Controller
 
     public function logout()
     {
+        Session::flush();
         return view('dashboard.login');
     }
 }
