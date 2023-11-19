@@ -23,9 +23,9 @@ class FeatureController extends Controller
         }
     }
 
-    public function features($id)
+    public function features($id, $type)
     {
-        $feature = Feature::where('property_id', $id)->where('type', 'property')->get();
+        $feature = Feature::where('property_id', $id)->where('type', $type)->get();
         return response()->json(['feature' => $feature]);
     }
 

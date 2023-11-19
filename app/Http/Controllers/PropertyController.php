@@ -54,7 +54,7 @@ class PropertyController extends Controller
         $property->save();
         if ($property->save()) {
             $item = Property::where('id', $property->id)->first();
-            return view('dashboard.property.add_property', [
+            return view('dashboard.property.modify_property', [
                 'item' => $item,
                 'mode' => 'EDIT',
             ])->with('success', 'Property created successfully');

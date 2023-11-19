@@ -26,9 +26,9 @@ class GallaryController extends Controller
         return response()->json(['error' => 'Image not found']);
     }
 
-    public function gallary($id)
+    public function gallary($id, $type)
     {
-        $gallary = Gallary::where('property_id', $id)->where('type', 'property')->get();
+        $gallary = Gallary::where('property_id', $id)->where('type', $type)->get();
         return response()->json(['gallary' => $gallary]);
     }
 

@@ -126,19 +126,19 @@
                 <div class="dashboard__sidebar d-none d-lg-block">
                     <div class="dashboard_sidebar_list">
                         <div class="sidebar_list_item">
-                            <a href="{{ route('home.view') }}" class="items-center {{ request()->is('dashboard/home') ? '-is-active' : '' }} ">
+                            <a href="{{ route('home.view') }}" class="items-center {{ request()->is('dashboard/home') ? '-is-active' : '' }}">
                                 <i class="flaticon-discovery mr15"></i>
                                 Dashboard
                             </a>
                         </div>
                         <div class="sidebar_list_item ">
-                            <a href="{{ route('property.view') }}" class="items-center {{ request()->is('dashboard/property/*') ? '-is-active' : '' }} ">
+                            <a href="{{ route('property.view') }}" class="items-center {{ request()->is('dashboard/property/*') ? '-is-active' : '' }}">
                                 <i class="flaticon-home mr15"></i>
                                 Property
                             </a>
                         </div>
                         <div class="sidebar_list_item ">
-                            <a href="{{ route('project.view') }}" class="items-center">
+                            <a href="{{ route('project.view') }}" class="items-center {{ request()->is('dashboard/project/*') ? '-is-active' : '' }}">
                                 <i class="flaticon-protection mr15"></i>
                                 Project
                             </a>

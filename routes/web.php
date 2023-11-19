@@ -63,14 +63,20 @@ Route::middleware([UserAuth::class])->group(function () {
         Route::GET('/property/delete/{id}', [PropertyController::class, 'delete'])->name('property.delete');
 
         Route::POST('/gallary/upload/{id}/{type}', [GallaryController::class, 'uplaodImage'])->name('gallary.upload');
-        Route::GET('/gallary/list/{id}', [GallaryController::class, 'gallary'])->name('gallary.list');
+        Route::GET('/gallary/list/{id}/{type}', [GallaryController::class, 'gallary'])->name('gallary.list');
         Route::GET('/gallary/delete/{id}', [GallaryController::class, 'deleteGallary'])->name('gallary.dete');
 
         Route::POST('/feature/store/{id}/{type}', [FeatureController::class, 'addFeature'])->name('feature.add');
-        Route::GET('/feature/list/{id}', [FeatureController::class, 'features'])->name('feature.list');
+        Route::GET('/feature/list/{id}/{type}', [FeatureController::class, 'features'])->name('feature.list');
         Route::GET('/feature/delete/{id}', [FeatureController::class, 'deleteFeature'])->name('feature.dete');
 
-        Route::GET('/project', [ProjectController::class, 'index'])->name('project.view');
+        Route::GET('/project/list', [ProjectController::class, 'index'])->name('project.view');
+        Route::GET('/project/add', [ProjectController::class, 'add'])->name('project.add');
+        Route::GET('/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+        Route::POST('/project/create', [ProjectController::class, 'create'])->name('project.create');
+        Route::PUT('/project/update/{id}', [ProjectController::class, 'update'])->name('project.update');
+        Route::POST('/project/update/address/{id}', [ProjectController::class, 'updateAddress'])->name('project.address');
+        Route::GET('/project/delete/{id}', [ProjectController::class, 'delete'])->name('project.delete');
 
         Route::GET('/blog/list', [BlogController::class, 'index'])->name('blog.view');
         Route::POST('/blog/create', [BlogController::class, 'create'])->name('blog.create');

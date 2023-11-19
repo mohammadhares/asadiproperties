@@ -8,8 +8,8 @@
         <div class="row align-items-center pb40">
             <div class="col-xxl-3">
                 <div class="dashboard_title_area">
-                    <h3>Property</h3>
-                    <p>you can add property, medias, address and features.</p>
+                    <h3>Project</h3>
+                    <p>you can add project, medias, address and features.</p>
                 </div>
             </div>
             <div class="row">
@@ -44,7 +44,7 @@
                                     aria-labelledby="nav-item1-tab">
                                     <div class="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
                                         <form class="form-style1"
-                                            action="@if ($mode === 'EDIT') {{ route('property.update', ['id' => $item->id]) }} @else {{ route('property.create') }} @endif"
+                                            action="@if ($mode === 'EDIT') {{ route('project.update', ['id' => $item->id]) }} @else {{ route('project.create') }} @endif"
                                             method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @if ($mode === 'EDIT')
@@ -74,8 +74,8 @@
                                                         <label class="heading-color ff-heading fw600 mb10">Select
                                                             Category</label>
                                                         <input type="text" required
-                                                            value="@if ($mode === 'EDIT') {{ $item->property_type }} @endif"
-                                                            name="property_type" class="form-control"
+                                                            value="@if ($mode === 'EDIT') {{ $item->project_type }} @endif"
+                                                            name="project_type" class="form-control"
                                                             placeholder="Ex: Home">
                                                     </div>
                                                 </div>
@@ -106,40 +106,13 @@
                                                 </div>
                                                 <div class="col-sm-6 col-xl-4">
                                                     <div class="mb30">
-                                                        <label class="heading-color ff-heading fw600 mb10">Size in
-                                                            ft/m</label>
-                                                        <input type="number" @if ($mode==='EDIT' )
-                                                            value="{{ $item->size }}" @endif name="size"
-                                                            class="form-control" placeholder="Ex: 200">
+                                                        <label class="heading-color ff-heading fw600 mb10">Developer</label>
+                                                        <input type="text" @if ($mode==='EDIT' )
+                                                            value="{{ $item->developer }}" @endif name="developer"
+                                                            class="form-control" placeholder="Ex: Ahmad">
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6 col-xl-4">
-                                                    <div class="mb30">
-                                                        <label
-                                                            class="heading-color ff-heading fw600 mb10">Bedrooms</label>
-                                                        <input type="number" required @if ($mode==='EDIT' )
-                                                            value="{{ $item->bedrooms }}" @endif name="bedrooms"
-                                                            class="form-control" placeholder="Ex: 5">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-xl-4">
-                                                    <div class="mb30">
-                                                        <label
-                                                            class="heading-color ff-heading fw600 mb10">Bathrooms</label>
-                                                        <input type="number" required @if ($mode==='EDIT' )
-                                                            value="{{ $item->bathrooms }}" @endif name="bathrooms"
-                                                            class="form-control" placeholder="Ex: 4">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-xl-4">
-                                                    <div class="mb30">
-                                                        <label class="heading-color ff-heading fw600 mb10">Build
-                                                            Year</label>
-                                                        <input type="date" required @if ($mode==='EDIT' )
-                                                            value="{{ $item->year_built }}" @endif name="build_year"
-                                                            class="form-control" placeholder="">
-                                                    </div>
-                                                </div>
+
                                                 <div class="col-sm-6 col-xl-4">
                                                     <div class="mb30">
                                                         <label
@@ -164,7 +137,7 @@
                                                     <div class="d-sm-flex text-right"
                                                         style="!important; justify-content: right;">
                                                         <a class="ud-btn btn-white"
-                                                            href="{{ route('property.view') }}">Back</a>
+                                                            href="{{ route('project.view') }}">Back</a>
                                                         <button type="submit" style="margin-left: 20px"
                                                             class="ud-btn btn-dark">Save Changes</button>
                                                     </div>
@@ -345,7 +318,7 @@
                 function getGallary(id) {
                     $.ajax({
                         type: 'GET',
-                        url: `/dashboard/gallary/list/${id}/property`,
+                        url: `/dashboard/gallary/list/${id}/project`,
                         success: function(response) {
                             displayGallary(response?.gallary);
                         },
@@ -358,7 +331,7 @@
                 function getFeatures(id) {
                     $.ajax({
                         type: 'GET',
-                        url: `/dashboard/feature/list/${id}/property`,
+                        url: `/dashboard/feature/list/${id}/project`,
                         success: function(response) {
                             displayFeature(response.feature);
                         },
@@ -376,7 +349,7 @@
                     const formData = new FormData($('#imageUploadForm')[0]);
                     $.ajax({
                         type: 'POST',
-                        url: `/dashboard/gallary/upload/${propertyId}/property`,
+                        url: `/dashboard/gallary/upload/${propertyId}/project`,
                         data: formData,
                         contentType: false,
                         processData: false,
@@ -482,7 +455,7 @@
                     formData.append('longitude', $('#longitude').val())
                     $.ajax({
                         type: 'POST',
-                        url: `/dashboard/property/update/address/${id}`,
+                        url: `/dashboard/project/update/address/${id}`,
                         data: formData,
                         contentType: false,
                         processData: false,
@@ -514,7 +487,7 @@
                     formData.append('feature', $('#feature').val())
                     $.ajax({
                         type: 'POST',
-                        url: `/dashboard/feature/store/${propertyId}/property`,
+                        url: `/dashboard/feature/store/${propertyId}/project`,
                         data: formData,
                         contentType: false,
                         processData: false,
