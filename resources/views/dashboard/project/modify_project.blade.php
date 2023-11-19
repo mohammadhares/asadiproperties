@@ -484,7 +484,8 @@
 
                 function addFeature(propertyId) {
                     const formData = new FormData();
-                    formData.append('feature', $('#feature').val())
+                    formData.append('feature', $('#feature').val());
+                    if($('#feature').val()){
                     $.ajax({
                         type: 'POST',
                         url: `/dashboard/feature/store/${propertyId}/project`,
@@ -492,6 +493,7 @@
                         contentType: false,
                         processData: false,
                         success: function(response) {
+                            $('#feature').val('')
                             getFeatures('{{ $item->id }}');
                             $('#feature_loader').html(`
                                 <div class="alert alert-success">
@@ -513,6 +515,16 @@
                                 }, 3000);
                         }
                     });
+                }else{
+                        $('#feature_loader').html(`
+                                    <div class="alert alert-danger">
+                                        Please type something.
+                                    </div>
+                                `);
+                                    setTimeout(() => {
+                                        $('#feature_loader').empty();
+                                    }, 3000);
+                    }
                 }
 
 

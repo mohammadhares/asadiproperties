@@ -12,15 +12,15 @@ class SubscribeController extends Controller
     public function subscribe(Request $request)
     {
         $subscribe = new Subscribe();
-        $subscribe->email = $request->email;
+        $subscribe->email = $request->subscribe;
         $subscribe->created_at = Carbon::now();
         $subscribe->updated_at = Carbon::now();
         $subscribe->save();
 
         if($subscribe){
-            return redirect()->back()->with('subscribe-success', 'Your Email Send Successfully');
-        }else{
-            return redirect()->back()->with('error', 'Sorry, Something went wrong');
+            return response()->json(['success' => 'you subscribed successfully']);
+        } else {
+            return response()->json(['error' => 'Failed, Please try agaign']);
         }
     }
 
@@ -36,10 +36,6 @@ class SubscribeController extends Controller
         {
             $contact = Subscribe::findOrFail($id);
             $contact->delete();
-            if ($contact->delete()) {
                 return redirect()->back()->with('success', 'email deleted successfully');
-            } else {
-                return redirect()->back()->with('error', 'Something went wrong');
-            }
         }
 }

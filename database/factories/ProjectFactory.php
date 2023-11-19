@@ -26,12 +26,10 @@ class ProjectFactory extends Factory
             'longitude' => fake()->longitude,
             'latitude' => fake()->latitude,
             'price' => fake()->numberBetween(10000, 1000000),
-            'features' => fake()->text,
             'thumbnail' => fake()->randomElement(['assets/images/listings/list-1.jpg', 'assets/images/listings/list-3.jpg',  'assets/images/listings/list-4.jpg',  'assets/images/listings/list-5.jpg', 'assets/images/listings/list-2.jpg']),
-            'payment_plans' => fake()->randomElement(['50%', '100%', '25%']),
             'project_type' => fake()->randomElement(['Apartment', 'Villa']),
             'status' => fake()->randomElement(['SALE', 'RENT']),
-            'created_by' => fake()->numberBetween(1, 10),
+            'modified_by' => fake()->numberBetween(1, 10),
         ];
     }
 }

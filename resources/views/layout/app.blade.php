@@ -84,15 +84,17 @@
 
         <div id="page" class="mobilie_header_nav stylehome1">
             <div class="mobile-menu">
-              <div class="header innerpage-style">
-                <div class="menu_and_widgets">
-                  <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
-                    <a class="menubar" href="#menu"><img src="assets/images/mobile-dark-nav-icon.svg" alt=""></a>
-                    <a class="mobile_logo" href="#"><img width="100px" src="{{ asset('assets/images/logo.1.png')}}" alt=""></a>
-                    <a href="page-login.html"><span class=""></span></a>
-                  </div>
+                <div class="header innerpage-style">
+                    <div class="menu_and_widgets">
+                        <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
+                            <a class="menubar" href="#menu"><img src="assets/images/mobile-dark-nav-icon.svg"
+                                    alt=""></a>
+                            <a class="mobile_logo" href="#"><img width="100px"
+                                    src="{{ asset('assets/images/logo.1.png')}}" alt=""></a>
+                            <a href="page-login.html"><span class=""></span></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
             <!-- /.mobile-menu -->
             <nav id="menu" class="">
@@ -105,22 +107,21 @@
                     </li>
                     <li> <a href='/offplane'>Off plane</a>
                     </li>
-                    <li> <a href='/services'>Services</a>
-                    </li>
                     <li> <a href='/blog'>Blog</a>
                     </li>
                     <li> <a href='/contact'>Contact</a>
                     </li>
                     <li> <a href='/about'>About as</a>
                     </li>
-              </ul>
+                </ul>
             </nav>
-          </div>
+        </div>
 
 
         @yield('content')
 
-        <a target="_blank" href="https://wa.me/{{ $siteInfo['phones'][0]['phone'] }}?text=Hello%20from%20Asadi!" class="whatsapp-floating">
+        <a target="_blank" href="https://wa.me/{{ $siteInfo->whatsapp_number }}?text=Hello%20from%20Asadi!"
+            class="whatsapp-floating">
             <span class="flaticon-whatsapp"></span>
         </a>
         <!-- Our Footer -->
@@ -142,31 +143,41 @@
                                 <div class="col-auto">
                                     <div class="contact-info">
                                         <p class="info-title">Total Free Customer Care</p>
-                                        @foreach ($siteInfo['phones'] as $phone)
                                         <h6 class="info-phone">
-                                            <a href="callto:{{ $phone['phone'] }}">{{ $phone['phone'] }}</a>
+                                            <a href="callto:{{ $siteInfo->phone_number }}">{{ $siteInfo->phone_number
+                                                }}</a>
                                         </h6>
-                                        @endforeach
+                                        <h6 class="info-phone">
+                                            <a href="callto:{{ $siteInfo->whatsapp_number }}">{{
+                                                $siteInfo->whatsapp_number }}</a>
+                                        </h6>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="contact-info">
                                         <p class="info-title">Need Live Support?</p>
-                                        @foreach ($siteInfo['emails'] as $email)
-                                        <h6 class="info-mail">
-                                            <a href="mailto:{{ $email['email'] }}">{{ $email['email'] }}</a>
+                                        <h6 class="info-phone">
+                                            <a href="callto:{{ $siteInfo->primary_email }}">{{ $siteInfo->primary_email
+                                                }}</a>
                                         </h6>
-                                        @endforeach
+                                        <h6 class="info-phone">
+                                            <a href="callto:{{ $siteInfo->secondary_email }}">{{
+                                                $siteInfo->secondary_email }}</a>
+                                        </h6>
                                     </div>
                                 </div>
                             </div>
                             <div class="social-widget">
                                 <h6 class="text-white mb20">Follow us on social media</h6>
                                 <div class="social-style1">
-                                    @foreach ($siteInfo['socialmedias'] as $social)
-                                    <a href="{{ $social['url'] }}"><i
-                                            class="fab fa-{{ $social['icon'] }} list-inline-item"></i></a>
-                                    @endforeach
+                                    <a href="{{ $siteInfo->facebook }}"><i
+                                            class="fab fa-facebook list-inline-item"></i></a>
+                                    <a href="{{ $siteInfo->instagram }}"><i
+                                            class="fab fa-instagram list-inline-item"></i></a>
+                                    <a href="{{ $siteInfo->twitter }}"><i
+                                            class="fab fa-twitter list-inline-item"></i></a>
+                                    <a href="{{ $siteInfo->linkedin }}"><i
+                                            class="fab fa-linkedin-in list-inline-item"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -176,18 +187,16 @@
                             <div class="mailchimp-widget mb-4 mb-lg-5">
                                 <h6 class="title text-white mb20">Keep Yourself Up to Date</h6>
                                 <div class="mailchimp-style1">
-                                    <form method="POST" action="{{ route('subscribe') }}">
+                                    <form method="POST">
                                         @csrf
-                                        <input required type="email" name="email" class="form-control"
-                                            placeholder="Your Email">
-                                        <button type="submit">Subscribe</button>
+                                        <input id="subscribe" required type="email" name="email" class="form-control"
+                                            placeholder="example@gmail.com">
+                                        <button onclick="subscribes()" type="button">Subscribe</button>
                                     </form>
                                 </div>
-                                @if(session('subscribe-success'))
-                                    <div class="alert alert-success mt-4" style="margin-top: 10px">
-                                        {{ session('success') }}
-                                    </div>
-                                @endif
+                                <div class="mt-2" id="subscribe_message">
+
+                                </div>
                             </div>
                             <div class="row justify-content-between">
                                 <div class="col-auto">
@@ -287,6 +296,41 @@
     <script src="../../assets/markerclusterer.js"></script>
     <!-- Custom script for all pages -->
     <script src="../../assets/js/script.js"></script>
+
+    <script>
+            const subscribes = () => {
+                    const formData = new FormData();
+                    formData.append('subscribe', $('#subscribe').val())
+                    $.ajax({
+                        type: 'POST',
+                        url: `/subscribe`,w
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function(response) {
+                            $('#subscribe_message').html(`
+                                <div style="color: green !important;">
+                                    Your email sent successfully.
+                                </div>
+                            `);
+                            $('#subscribe').val(' ')
+                                setTimeout(() => {
+                                    $('#subscribe_message').empty();
+                                }, 3000);
+                        },
+                        error: function(error) {
+                            $('#subscribe_message').html(`
+                                <div style="color: red  !important;">
+                                    This email is already exists
+                                </div>
+                            `);
+                                setTimeout(() => {
+                                    $('#subscribe_message').empty();
+                                }, 3000);
+                        }
+                    });
+                }
+    </script>
 </body>
 
 </html>

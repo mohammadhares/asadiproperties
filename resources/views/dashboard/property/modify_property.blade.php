@@ -511,35 +511,48 @@
 
                 function addFeature(propertyId) {
                     const formData = new FormData();
-                    formData.append('feature', $('#feature').val())
-                    $.ajax({
-                        type: 'POST',
-                        url: `/dashboard/feature/store/${propertyId}/property`,
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        success: function(response) {
-                            getFeatures('{{ $item->id }}');
-                            $('#feature_loader').html(`
-                                <div class="alert alert-success">
-                                    Feature added successfully.
-                                </div>
-                            `);
-                                setTimeout(() => {
-                                    $('#feature_loader').empty();
-                                }, 3000);
-                        },
-                        error: function(error) {
-                            $('#feature_loader').html(`
-                                <div class="alert alert-success">
-                                    There is something wrong.
-                                </div>
-                            `);
-                                setTimeout(() => {
-                                    $('#feature_loader').empty();
-                                }, 3000);
-                        }
-                    });
+                    formData.append('feature', $('#feature').val());
+                    if($('#feature').val()){
+                        $.ajax({
+                            type: 'POST',
+                            url: `/dashboard/feature/store/${propertyId}/property`,
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            success: function(response) {
+                                getFeatures('{{ $item->id }}');
+                                $('#feature').val('')
+                                $('#feature_loader').html(`
+                                    <div class="alert alert-success">
+                                        Feature added successfully.
+                                    </div>
+                                `);
+                                    setTimeout(() => {
+                                        $('#feature_loader').empty();
+                                    }, 3000);
+                            },
+                            error: function(error) {
+
+                                $('#feature_loader').html(`
+                                    <div class="alert alert-danger">
+                                        There is something wrong.
+                                    </div>
+                                `);
+                                    setTimeout(() => {
+                                        $('#feature_loader').empty();
+                                    }, 3000);
+                            }
+                        });
+                    }else{
+                        $('#feature_loader').html(`
+                                    <div class="alert alert-danger">
+                                        Please type something.
+                                    </div>
+                                `);
+                                    setTimeout(() => {
+                                        $('#feature_loader').empty();
+                                    }, 3000);
+                    }
                 }
 
 

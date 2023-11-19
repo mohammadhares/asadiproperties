@@ -50,7 +50,7 @@
                                                 </div>
                                                 <div class="list-content py-0 p-0 mt-2 mt-xxl-0 ps-xxl-4">
                                                     <div class="h6 list-title">
-                                                        <a href="return false">{{ $item->title }}</a>
+                                                        <a href="#">{{ $item->title }}</a>
                                                     </div>
                                                     <p class="list-text mb-0">{{ $item->city}}, {{ $item->country }}</p>
                                                     <div class="list-price">

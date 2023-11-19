@@ -23,11 +23,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
     <link href="{{ asset('assets/images/logo.1.png') }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     @yield('styles')
     <title>Asadi Properties</title>
 </head>
-
 <body>
     <div class="wrapper">
         <!-- Main Header Nav -->
@@ -44,7 +42,7 @@
                                     </a>
                                 </div>
                                 <div class="fz20 ms-2 ms-xl-5">
-                                    <a href="{{ route('home.view') }}"
+                                    <a href="#"
                                         class="dashboard_sidebar_toggle_icon text-thm1 vam">
                                         <img src="{{ asset('assets/images/dark-nav-icon.svg') }}" alt="toggle-btn">
                                     </a>
@@ -67,7 +65,7 @@
                                     <li class="user_setting">
                                         <div class="dropdown">
                                             <a class="btn" href="return false;" data-bs-toggle="dropdown">
-                                                <img src="{{ asset('assets/images/resource/user.png') }}" alt="user.png">
+                                                <img style="width: 40px; height: 40px; border-radius: 50%;" src="{{ asset(session('user')->image) }}" alt="user.png">
                                             </a>
                                             <div class="dropdown-menu">
                                                 <div class="user_setting_content">
@@ -94,13 +92,13 @@
                 <div class="header innerpage-style">
                     <div class="menu_and_widgets">
                         <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
-                            <a class="menubar" href="#menu">
+                            <a class="menubar" href="#">
                                 <img src="{{ asset('assets/images/mobile-dark-nav-icon.svg') }}" alt="">
                             </a>
                             <a class="mobile_logo" href="#">
                                 <img src="{{ asset('assets/images/header-logo2.svg') }}" alt="">
                             </a>
-                            <a href="page-login.html"><span class="icon fz18 far fa-user-circle"></span></a>
+                            <a href="#"><span class="icon fz18 far fa-user-circle"></span></a>
                         </div>
                     </div>
                 </div>
@@ -112,9 +110,10 @@
                     <li> <a href='{{ route('property.view') }}'>Property</a></li>
                     <li> <a href='{{ route('project.view') }}'>Project</a></li>
                     <li> <a href='{{ route('blog.view') }}'>Blog</a></li>
-                    <li> <a href='{{ route('users.view') }}'>Users</a></li>
                     <li> <a href='{{ route('contact.view') }}'>Contact</a> </li>
                     <li> <a href='{{ route('subscribe.view') }}'>Subscribe</a> </li>
+                    <li> <a href='{{ route('setting.view') }}'>Settings</a></li>
+                    <li> <a href='{{ route('users.view') }}'>Users</a></li>
                     <li> <a href='{{ route('profile.view') }}'>My Profile</a> </li>
                     <li> <a href='{{ route('auth.logout') }}'>Logout</a> </li>
                 </ul>
@@ -164,7 +163,7 @@
 
                         <div class="sidebar_list_item ">
                             <a href="{{ route('setting.view') }}" class="items-center {{ request()->is('dashboard/settings') ? '-is-active' : '' }}">
-                                <i class="flaticon-email mr15"></i>
+                                <i class="flaticon-discovery mr15"></i>
                                 Settings
                             </a>
                         </div>

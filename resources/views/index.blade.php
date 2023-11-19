@@ -176,12 +176,12 @@
                                                 <div class="list-meta2 d-flex justify-content-between align-items-center">
                                                     <span class="for-what">For {{ $item->status }}</span>
                                                     <div class="icons d-flex align-items-center">
-                                                        <a href="callto:{{ $siteInfo['phones'][0]['phone'] }}"><span
+                                                        <a href="callto:{{ $siteInfo->phone_number }}"><span
                                                                 class="flaticon-call"></span></a>
-                                                        <a href="mailto:{{ $siteInfo['emails'][0]['email'] }}"><span
+                                                        <a href="mailto:{{ $siteInfo->primary_email }}"><span
                                                                 class="flaticon-email"></span></a>
                                                         <a target="_blank"
-                                                            href="https://wa.me/{{ $siteInfo['phones'][0]['phone'] }}?text=Hello%20from%20Asadi!"><span
+                                                            href="https://wa.me/{{ $siteInfo->whatsapp_number }}?text=Hello%20from%20Asadi!"><span
                                                                 class="flaticon-whatsapp"></span></a>
                                                     </div>
                                                 </div>
@@ -207,8 +207,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="text-start text-lg-end mb-3">
-                            {{-- <a class="ud-btn2" href="page-property-single-v1.html">See All Cities<i
-                                    class="fal fa-arrow-right-long"></i></a> --}}
+
                         </div>
                     </div>
                 </div>
@@ -226,8 +225,6 @@
                                             <p class="text">59 Properties</p>
                                         </div>
                                         <div class="bottom-area">
-                                            {{-- <a class="ud-btn2" href="page-property-single-v1.html">See All Cities<i
-                                                    class="fal fa-arrow-right-long"></i></a> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -399,15 +396,13 @@
                                                                     class="list-meta2 d-flex justify-content-between align-items-center">
                                                                     <span class="for-what">For {{ $item->status }}</span>
                                                                     <div class="icons d-flex align-items-center">
-                                                                        <a
-                                                                            href="callto:{{ $siteInfo['phones'][0]['phone'] }}"><span
-                                                                                class="flaticon-call"></span></a>
-                                                                        <a
-                                                                            href="mailto:{{ $siteInfo['emails'][0]['email'] }}"><span
-                                                                                class="flaticon-email"></span></a>
-                                                                        <a target="_blank"
-                                                                            href="https://wa.me/{{ $siteInfo['phones'][0]['phone'] }}?text=Hello%20from%20Asadi!"><span
-                                                                                class="flaticon-whatsapp"></span></a>
+                                                                        <a href="callto:{{ $siteInfo->phone_number }}"><span
+                                                                            class="flaticon-call"></span></a>
+                                                                    <a href="mailto:{{ $siteInfo->primary_email }}"><span
+                                                                            class="flaticon-email"></span></a>
+                                                                    <a target="_blank"
+                                                                        href="https://wa.me/{{ $siteInfo->whatsapp_number }}?text=Hello%20from%20Asadi!"><span
+                                                                            class="flaticon-whatsapp"></span></a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -467,15 +462,13 @@
                                                                     class="list-meta2 d-flex justify-content-between align-items-center">
                                                                     <span class="for-what">For {{ $item->status }}</span>
                                                                     <div class="icons d-flex align-items-center">
-                                                                        <a
-                                                                            href="callto:{{ $siteInfo['phones'][0]['phone'] }}"><span
-                                                                                class="flaticon-call"></span></a>
-                                                                        <a
-                                                                            href="mailto:{{ $siteInfo['emails'][0]['email'] }}"><span
-                                                                                class="flaticon-email"></span></a>
-                                                                        <a target="_blank"
-                                                                            href="https://wa.me/{{ $siteInfo['phones'][0]['phone'] }}?text=Hello%20from%20Asadi!"><span
-                                                                                class="flaticon-whatsapp"></span></a>
+                                                                        <a href="callto:{{ $siteInfo->phone_number }}"><span
+                                                                            class="flaticon-call"></span></a>
+                                                                    <a href="mailto:{{ $siteInfo->primary_email }}"><span
+                                                                            class="flaticon-email"></span></a>
+                                                                    <a target="_blank"
+                                                                        href="https://wa.me/{{ $siteInfo->whatsapp_number }}?text=Hello%20from%20Asadi!"><span
+                                                                            class="flaticon-whatsapp"></span></a>
                                                                     </div>
                                                                 </div>
                                                             </div>

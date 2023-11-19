@@ -19,8 +19,8 @@
                     <div class="cta-btns-style1 d-block d-sm-flex align-items-center justify-content-lg-end">
                         <a href="/contact" class="ud-btn btn-transparent mr30 mr0-xs">Contact Us<i
                                 class="fal fa-arrow-right-long"></i></a>
-                        <a href="callto:{{ $siteInfo['phones'][0]['phone'] }}}" class="ud-btn btn-dark">
-                            <span class="flaticon-call vam pe-2"></span> {{ $siteInfo['phones'][0]['phone'] }}
+                        <a href="callto:{{ $siteInfo->phone_number }}}" class="ud-btn btn-dark">
+                            <span class="flaticon-call vam pe-2"></span> {{ $siteInfo->phone_number }}
                         </a>
                     </div>
                 </div>

@@ -48,18 +48,13 @@
                                         <input type="text" name="password" required class="form-control"
                                             placeholder="Enter Password">
                                     </div>
-                                    <div
-                                        class="checkbox-style1 d-block d-sm-flex align-items-center justify-content-between mb10">
-                                        <label class="custom_checkbox fz14 ff-heading">Remember me
-                                            <input type="checkbox" checked="checked">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <a class="fz14 ff-heading" href="#">Lost your password?</a>
-                                    </div>
                                     <div class="d-grid mb20" style="margin-top: 50px">
                                         <button class="ud-btn btn-thm" type="submit">Sign in <i
                                                 class="fal fa-arrow-right-long"></i>
                                         </button>
+                                    </div>
+                                    <div class="mt-1">
+                                        @include('component.messages.errors')
                                     </div>
                                 </form>
                             </div>

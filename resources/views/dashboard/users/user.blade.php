@@ -63,8 +63,6 @@
                                                                     class="heading-color ff-heading fw600 mb10">Role</label>
                                                                 <select name="role" id="role" class="form-control">
                                                                     <option value="ADMIN">Administrator</option>
-                                                                    <option value="EDITOR">Editor</option>
-                                                                    <option value="VIEWER">Viewer</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -224,16 +222,6 @@
                                                                                             <option @if($item->role ===
                                                                                                 'ADMIN') selected @endif
                                                                                                 value="ADMIN">Administrator
-                                                                                            </option>
-                                                                                            <option @if($item->role ===
-                                                                                                'EDITOR') selected
-                                                                                                @endif
-                                                                                                value="EDITOR">Editor
-                                                                                            </option>
-                                                                                            <option @if($item->role ===
-                                                                                                'VIEWER') selected
-                                                                                                @endif
-                                                                                                value="VIEWER">Viewer
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>

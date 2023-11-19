@@ -21,9 +21,13 @@
                 <div class="list-meta2 d-flex justify-content-between align-items-center">
                     <span class="for-what">For {{ $item->status }}</span>
                     <div class="icons d-flex align-items-center">
-                        <a href="callto:{{ $siteInfo['phones'][0]['phone'] }}"><span class="flaticon-call"></span></a>
-                        <a href="mailto:{{ $siteInfo['emails'][0]['email'] }}"><span class="flaticon-email"></span></a>
-                        <a href="callto:{{ $siteInfo['phones'][0]['phone'] }}"><span class="flaticon-whatsapp"></span></a>
+                        <a  href="callto:{{ $siteInfo->phone_number }}"><span
+                            class="flaticon-call"></span></a>
+                    <a  href="mailto:{{ $siteInfo->primary_email }}"><span
+                            class="flaticon-email"></span></a>
+                    <a  target="_blank"
+                        href="https://wa.me/{{ $siteInfo->whatsapp_number }}?text=Hello%20from%20Asadi!"><span
+                            class="flaticon-whatsapp"></span></a>
                     </div>
                 </div>
             </div>

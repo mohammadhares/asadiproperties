@@ -29,13 +29,14 @@
                 <div class="single-property-content">
                     <div class="property-action text-lg-end">
                         <div class="d-flex mb20 mb10-md align-items-center justify-content-lg-end">
-                            <a class="icon mr10" href="callto:{{ $siteInfo['phones'][0]['phone'] }}"><span
-                                    class="flaticon-call"></span></a>
-                            <a class="icon mr10" href="mailto:{{ $siteInfo['emails'][0]['email'] }}"><span
-                                    class="flaticon-email"></span></a>
-                            <a class="icon mr10" target="_blank"
-                                href="https://wa.me/{{ $siteInfo['phones'][0]['phone'] }}?text=Hello%20from%20Asadi!"><span
-                                    class="flaticon-whatsapp"></span></a>
+
+                                    <a class="icon mr10" href="callto:{{ $siteInfo->phone_number }}"><span
+                                        class="flaticon-call"></span></a>
+                                <a class="icon mr10" href="mailto:{{ $siteInfo->primary_email }}"><span
+                                        class="flaticon-email"></span></a>
+                                <a class="icon mr10" target="_blank"
+                                    href="https://wa.me/{{ $siteInfo->whatsapp_number }}?text=Hello%20from%20Asadi!"><span
+                                        class="flaticon-whatsapp"></span></a>
                         </div>
                         <h3 class="price mb-0">AED {{ $result->price }}</h3>
                         <p class="text space fz15">{{ $result->size }}/ft</p>
@@ -44,33 +45,28 @@
             </div>
         </div>
         <div class="row mt30 wow fadeInUp" data-wow-delay="300ms">
-            <div class="col-sm-9">
+            <div class="@if(count($gallary) > 0) col-sm-9 @else col-sm-12 @endif">
                 <div class="sp-img-content at-sp-v2 mb15-md">
                     <a class="popup-img preview-img-1 sp-img" href="{{ asset($result->thumbnail) }}">
                         <img class="w-100" src="{{ asset($result->thumbnail) }}" alt="8.jpg">
                     </a>
                 </div>
             </div>
+            @if(count($gallary) > 0)
             <div class="col-sm-3">
                 <div class="row">
                     <div class="col-sm-12 ps-lg-0">
-                        <div class="sp-img-content">
-                            <a class="popup-img preview-img-3 sp-img mb10" href="{{ asset($result->thumbnail) }}">
-                                <img class="w-100" src="{{ asset($result->thumbnail) }}" alt="3.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 ps-lg-0">
-                        <div class="sp-img-content at-sp-v2">
-                            <a class="popup-img preview-img-5 sp-img" href="{{ asset($result->thumbnail) }}">
-                                <img class="w-100" src="{{ asset($result->thumbnail) }}" alt="5.jpg">
-                            </a>
-                            <a href="{{ asset($result->thumbnail) }}" class="all-tag popup-img">See All
-                                Photos</a>
+                        <div class="sp-img-content" style="height: 550px; overflow: auto;">
+                            @foreach ($gallary as $item)
+                                <a class="popup-img preview-img-3 sp-img mb10" href="{{ asset($item->image) }}">
+                                    <img style="width: 70% !important;" class="w-100" src="{{ asset($item->image) }}" alt="3.jpg">
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
+            @endif
         </div>
         <div class="row mt30">
             <div class="col-sm-6 col-md-4 col-xl-2">
@@ -197,30 +193,11 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="pd-list mb10-sm">
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>Air Conditioning
+                                @foreach ($feature as $item)
+                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>
+                                    {{ $item->feature }}
                                 </p>
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>Barbeque</p>
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>Dryer</p>
-                                <p class="text mb-0"><i class="fas fa-circle fz6 align-middle pe-2"></i>Gym</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="pd-list">
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>Lawn</p>
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>Microwave</p>
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>Outdoor Shower
-                                </p>
-                                <p class="text mb-0"><i class="fas fa-circle fz6 align-middle pe-2"></i>Refrigerator</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="pd-list">
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>Swimming Pool
-                                </p>
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>TV Cable</p>
-                                <p class="text mb10"><i class="fas fa-circle fz6 align-middle pe-2"></i>Washer</p>
-                                <p class="text mb-0"><i class="fas fa-circle fz6 align-middle pe-2"></i>WiFi6
-                                <p>
+                                @endforeach
                             </div>
                         </div>
                     </div>

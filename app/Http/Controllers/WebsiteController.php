@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Contact;
+use App\Models\Feature;
+use App\Models\Gallary;
 use App\Models\Project;
 use App\Models\Property;
 use App\Models\Setting;
@@ -116,18 +118,26 @@ class WebsiteController extends Controller
     public function singleProperty($id)
     {
         $result = Property::findOrFail($id);
+        $gallary = Gallary::where('property_id', $id)->where('type', 'property')->get();
+        $feature = Feature::where('property_id', $id)->where('type', 'property')->get();
         return view('single-property', [
             'siteInfo' => $this->siteInfo,
             'result' => $result,
+            'gallary' => $gallary,
+            'feature' => $feature,
         ]);
     }
 
     public function singleProject($id)
     {
         $result = Project::findOrFail($id);
+        $gallary = Gallary::where('property_id', $id)->where('type', 'property')->get();
+        $feature = Feature::where('property_id', $id)->where('type', 'property')->get();
         return view('single-project', [
             'siteInfo' => $this->siteInfo,
             'result' => $result,
+               'gallary' => $gallary,
+            'feature' => $feature,
         ]);
     }
 

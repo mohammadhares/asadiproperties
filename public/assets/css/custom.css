@@ -222,3 +222,8 @@ feBlend .list-title,
     position: relative;
     right: 20px;
 }
+
+
+.dark-mode .far {
+    color: #f9f9f9 !important;
+}
